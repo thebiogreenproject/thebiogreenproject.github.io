@@ -51,17 +51,24 @@ a:hover{opacity:.9}
 @media (max-width:700px){.menu{gap:6px}.menu a{padding:8px 10px}}
 
 /* --- Team Page: consistent photo sizing --- */
+/* Neutral image defaults (do NOT force size globally) */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* --- Team Page: consistent photo sizing --- */
 #lead img,  /* Dr Bora’s section */
 #leads img, /* Team Leads */
 #members img,
-#alumni img
-  width: 180px;          /* fixed width */
-  height: 180px;         /* fixed height */
-  object-fit: cover;     /* crop nicely without stretching */
-  border-radius: 50%;    /* perfect circle */
-  margin: 0 auto 12px;   /* center and add spacing */
+#alumni img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 12px;
   display: block;
-  border: 2px solid #e5e7eb; /* light border like JYI */
+  border: 2px solid #e5e7eb;
 }
 
 /* Center-align text for cards on team page */
@@ -71,4 +78,5 @@ a:hover{opacity:.9}
 #alumni .card {
   text-align: center;
 }
+
 
