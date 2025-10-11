@@ -1,12 +1,12 @@
 :root{
---bg:#0b0f11; /* charcoal */
---panel:#11171a; /* slightly lighter panel */
---ink:#e7ecef; /* near-white text */
---muted:#9fb0b8; /* muted text */
---accent:#56d364; /* green accent */
---accent-2:#4fb3ff; /* secondary accent (links/icons) */
---ring:rgba(86,211,100,.4);
---max:1100px;
+  --bg:#0b0f11;          /* charcoal */
+  --panel:#11171a;       /* slightly lighter panel */
+  --ink:#e7ecef;         /* near-white text */
+  --muted:#9fb0b8;       /* muted text */
+  --accent:#56d364;      /* green accent */
+  --accent-2:#4fb3ff;    /* secondary accent (links/icons) */
+  --ring:rgba(86,211,100,.4);
+  --max:1100px;
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;line-height:1.5}
@@ -51,6 +51,6 @@ a:hover{opacity:.9}
 
 /* Responsive tweaks */
 @media (max-width:700px){
-.menu{gap:6px}
-.menu a{padding:8px 10px}
+  .menu{gap:6px}
+  .menu a{padding:8px 10px}
 }
