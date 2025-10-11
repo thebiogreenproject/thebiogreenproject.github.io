@@ -25,7 +25,7 @@ a:hover{opacity:.9}
 .menu a:hover{background:#f1f5f2}
 .btn{display:inline-block;padding:10px 14px;border-radius:12px;background:var(--accent);color:#fff;font-weight:600;border:1px solid rgba(0,0,0,.1)}
 .btn.secondary{background:transparent;color:var(--accent-2);border:1px solid #d1d5d3}
-.hero{background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.15)),url('images/hero_team.jpg') center/cover no-repeat;border-bottom:1px solid #e5e7eb}
+.hero {background: linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,0.2)), url('images/hero_home.jpg') center/cover no-repeat;}
 .hero .container{padding:88px 24px}
 .hero h1{font-size: clamp(28px, 4vw, 48px);margin:0 0 8px}
 .hero p{max-width:800px;color:var(--muted);margin:0 0 18px}
