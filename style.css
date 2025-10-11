@@ -52,10 +52,17 @@ a:hover{opacity:.9}
 
 /* --- Team Page: consistent photo sizing --- */
 /* Neutral image defaults (do NOT force size globally) */
-img {
-  max-width: 100%;
+#lead img, #leads img, #members img, #alumni img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 12px;
   display: block;
+  border: 2px solid #e5e7eb;
 }
+#lead .card, #leads .card, #members .card, #alumni .card { text-align: center; }
+
 
 /* --- Team Page: consistent photo sizing --- */
 #lead img,  /* Dr Bora’s section */
