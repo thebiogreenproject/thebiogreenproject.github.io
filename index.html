@@ -1,4 +1,12 @@
 <!doctype html>
+<!--
+  BioGreen Website — Home
+  Purpose: Landing page with project pitch, CTAs, and quick links.
+  How to change the banner image:
+    - Replace images/hero_home.jpeg OR update the --hero-img inline style below.
+  Navigation: Update <nav> for new pages; keep 'active' on current page.
+  Accessibility: Keep meaningful alt text on all images.
+-->
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -11,10 +19,12 @@
   <!-- Header / Navbar -->
   <header class="header">
     <nav class="nav">
+      <!-- Brand (logo + name). If you change the logo file, keep the aspect and alt text. -->
       <div class="brand">
         <img src="images/logo.jpg" alt="BioGreen logo" />
         <span class="brand-name">The BioGreen Project</span>
       </div>
+      <!-- Menu: Add/remove items as needed; ensure exactly one link has 'active' on each page. -->
       <div class="menu">
         <a href="index.html" class="active">Home</a>
         <a href="team.html">Team</a>
@@ -25,7 +35,7 @@
     </nav>
   </header>
 
-  <!-- HERO: page banner (auto-adjusts any uploaded image) -->
+  <!-- HERO: page banner (change image by editing --hero-img url) -->
   <section class="hero" style="--hero-img: url('images/hero_home.jpeg')">
     <div class="container">
       <span class="kicker">Welcome</span>
@@ -35,6 +45,7 @@
         Join us to build a community of brewers, growers, and students experimenting with 
         spent grain for better soils and stronger crops.
       </p>
+      <!-- Primary calls-to-action: keep three max for clarity -->
       <div class="actions">
         <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfyrYPMFbpblwrjf735tpshw0kfAPxARhTBlcg-CUtjKqo_Og/viewform?usp=dialog" target="_blank" rel="noopener">Join the Movement</a>
         <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSf0mxkOro-APzu-nE0Ocooh55Ws2I-JzgxP7_fyViZTUE4yIQ/viewform?usp=dialog" target="_blank" rel="noopener">Apply for Team Roles</a>
@@ -45,6 +56,7 @@
 
   <!-- Main Content -->
   <main class="container">
+    <!-- Project story: keep concise; move long history to a separate page if it grows. -->
     <section class="section">
       <h2>Our Story in a Nutshell</h2>
       <p>
@@ -57,46 +69,47 @@ What started as a small volunteer experiment has evolved into a collaborative pr
         BioGreen isn’t just about data; it’s about people. It’s about building a community of students, gardeners, and local partners who share a belief that small changes can make real environmental impact.
       </p>
 
+      <!-- Research link: swap with new DOI when needed -->
       <hr style="margin:24px 0; border:0; border-top:1px solid #e5e7eb;">
-        <div class="btn-row" style="margin-bottom:32px;">
-          <a class="btn" href="https://dx.doi.org/10.12692/ijb/27.3.136-144" target="_blank" rel="noopener">
-            Visit Our Recent Research Publication
-          </a>
-        </div>
-     </section>
- 
-      
-  <!-- Previous Research Project -->
-    <section class="section">
-  <h2>Our Previous Research Project</h2>
-  <a href="old-project.html" target="_blank" rel="noopener"  
-     style="display:block; position:relative; border-radius:16px; overflow:hidden; text-decoration:none;">
-    <img src="images/plastic_recycle.png" alt="Previous BioGreen project banner" 
-         style="width:100%; height:300px; object-fit:cover; display:block;">
-    <div style="position:absolute; bottom:0; left:0; right:0; 
-                background:rgba(0,0,0,0.55); color:#fff; 
-                padding:16px; font-size:20px; text-align:center;">
-      Click to View Our Past BioGreen Project →
-    </div>
-  </a>
-</section>
-
-
-  <!-- Footer -->
-  <footer class="footer">
-  <div class="container cols">
-    <div>
-      <strong>The BioGreen Project</strong>
-      <p class="lead">Built by students, for sustainability.</p>
-    </div>
-    <div>
-      <small>© 2025 The BioGreen Project</small><br>
-      <small>
-        <a href="https://github.com/thebiogreenproject/thebiogreenproject.github.io" target="_blank" rel="noopener">
-          GitHub Repository
+      <div class="btn-row" style="margin-bottom:32px;">
+        <a class="btn" href="https://dx.doi.org/10.12692/ijb/27.3.136-144" target="_blank" rel="noopener">
+          Visit Our Recent Research Publication
         </a>
-      </small>
-    </div>
-  </div>
-</footer>
+      </div>
+    </section>
+ 
+    <!-- Previous Research Project: keep as visual card linking to older site/page. -->
+    <section class="section">
+      <h2>Our Previous Research Project</h2>
+      <a href="old-project.html" target="_blank" rel="noopener"  
+         style="display:block; position:relative; border-radius:16px; overflow:hidden; text-decoration:none;">
+        <img src="images/plastic_recycle.png" alt="Previous BioGreen project banner" 
+             style="width:100%; height:300px; object-fit:cover; display:block;">
+        <div style="position:absolute; bottom:0; left:0; right:0; 
+                    background:rgba(0,0,0,0.55); color:#fff; 
+                    padding:16px; font-size:20px; text-align:center;">
+          Click to View Our Past BioGreen Project →
+        </div>
+      </a>
+    </section>
+  </main>
 
+  <!-- Footer: keep repo link current -->
+  <footer class="footer">
+    <div class="container cols">
+      <div>
+        <strong>The BioGreen Project</strong>
+        <p class="lead">Built by students, for sustainability.</p>
+      </div>
+      <div>
+        <small>© 2025 The BioGreen Project</small><br>
+        <small>
+          <a href="https://github.com/thebiogreenproject/thebiogreenproject.github.io" target="_blank" rel="noopener">
+            GitHub Repository
+          </a>
+        </small>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
