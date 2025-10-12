@@ -228,6 +228,7 @@ details.cohort .cohort-body {
   transition: all 0.25s ease-in-out;
   text-decoration: none;
   color: inherit;
+  padding: 16px;
 }
 
 .team-card:hover {
@@ -236,6 +237,7 @@ details.cohort .cohort-body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
+/* Circular team photos */
 .team-card img {
   width: 160px;
   height: 160px;
@@ -243,6 +245,24 @@ details.cohort .cohort-body {
   border-radius: 50%;
   margin: 0 auto 12px;
   display: block;
-  border: 2px solid #ffffff;
+  border: 3px solid #ffffff;
+}
+
+/* Subtle hover animation on the photo */
+.team-card:hover img {
+  transform: scale(1.03);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Keep text readable inside cards */
+.team-card h3 {
+  margin: 8px 0 4px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.team-card p.lead {
+  font-size: 16px;
+  color: var(--muted);
+  margin: 4px 0;
 }
 
