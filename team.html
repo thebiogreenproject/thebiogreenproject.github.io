@@ -1,26 +1,37 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Basic setup -->
+  <!-- Basic setup for browser compatibility and responsiveness -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <!-- Page title and description -->
   <title>Team — The BioGreen Project</title>
-  <meta name="description" content="Meet the BioGreen team — founder, team leads, members, and past cohorts." />
+  <meta name="description" content="Meet the BioGreen Project team — founder, leads, current members, and past cohorts of students driving sustainability." />
 
+  <!-- Link to main design file -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ===== SITE HEADER (same on every page) ===== -->
+  <!-- ===============================================================
+       HEADER (top navigation bar)
+       Appears on every page. On phones, turns into a hamburger menu (☰).
+  =============================================================== -->
   <header class="header">
     <nav class="nav">
+      <!-- Left side: logo + project name -->
       <a href="index.html" class="brand">
         <img src="images/logo.jpg" alt="BioGreen logo" />
+        <!-- Two labels: long name (desktop) and short name (mobile) -->
         <span class="brand-name brand-name--full">The BioGreen Project</span>
         <span class="brand-name brand-name--short">BioGreen</span>
       </a>
+
+      <!-- Right side: hamburger button for mobile -->
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">☰</button>
+
+      <!-- Navigation menu links -->
       <div class="menu" id="nav-menu">
         <a href="index.html">Home</a>
         <a href="team.html" class="active">Team</a>
@@ -31,13 +42,16 @@
     </nav>
   </header>
 
-  <!-- ===== HERO (smaller banner for subpages) ===== -->
+  <!-- ===============================================================
+       HERO SECTION (top banner image)
+       Background image can be changed in the style attribute.
+  =============================================================== -->
   <section class="hero small" style="--hero-img: url('images/banner_team.jpeg')">
     <div class="container">
       <h1 class="banner-title">Our Team</h1>
       <p class="lead">Founder • Team Leads • Current Members</p>
 
-      <!-- QUICK-JUMP BUTTONS: links to sections below -->
+      <!-- Quick-jump buttons: scroll directly to sections below -->
       <div class="actions" style="margin-top:14px">
         <a class="btn" href="#lead">Founder</a>
         <a class="btn" href="#leads">Team Leads</a>
@@ -46,13 +60,17 @@
     </div>
   </section>
 
+  <!-- ===============================================================
+       MAIN CONTENT AREA — all sections live inside <main>
+  =============================================================== -->
   <main class="container">
-    <!-- ===== Founder / Mentor ===== -->
+
+    <!-- ===========================================================
+         FOUNDER / MENTOR SECTION
+    ============================================================ -->
     <section id="lead" class="section">
       <span class="kicker">Board of Director</span>
       <h2>Founder and Mentor</h2>
-
-      <!-- Founder card -->
       <div class="card-grid">
         <a class="card team-card" href="https://www.linkedin.com/in/nagamani5/" target="_blank" rel="noopener">
           <img src="images/dr_bora.jpeg" alt="Dr Nagamani Bora" />
@@ -63,12 +81,15 @@
       </div>
     </section>
 
-    <!-- ===== Team Leads ===== -->
+    <!-- ===========================================================
+         TEAM LEADS SECTION
+         Each member card links to their LinkedIn profile.
+    ============================================================ -->
     <section id="leads" class="section">
       <span class="kicker">Leadership</span>
       <h2>Team Leads</h2>
       <div class="card-grid">
-        <!-- Keep this exact order (as you had before) -->
+
         <a class="card team-card" href="https://www.linkedin.com/in/swarnadeep-saha-602880258" target="_blank" rel="noopener">
           <img src="images/team_swarnadeep.jpeg" alt="Swarnadeep Saha" />
           <h3>Swarnadeep Saha</h3>
@@ -107,18 +128,23 @@
       </div>
     </section>
 
-    <!-- ===== Current Members ===== -->
+    <!-- ===========================================================
+         CURRENT MEMBERS SECTION
+    ============================================================ -->
     <section id="members" class="section">
       <span class="kicker">Community</span>
       <h2>Current Members</h2>
 
+      <!-- Action buttons -->
       <p style="margin-top:12px">
         <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSf0mxkOro-APzu-nE0Ocooh55Ws2I-JzgxP7_fyViZTUE4yIQ/viewform?usp=dialog" target="_blank" rel="noopener">Join The Team</a>
-        <!-- NOTE: contact email differs across pages; standardize later if needed -->
         <a class="btn" href="mailto:thebiogreenproject@gmail.com">Email Us</a>
       </p>
 
-      <!-- ===== Past Teams (collapsible cohorts) ===== -->
+      <!-- =========================================================
+           PAST TEAMS (collapsible “accordion” sections)
+           Click each year to expand.
+      ========================================================== -->
       <div id="alumni" class="section">
         <span class="kicker">History</span>
         <h2>Past Teams</h2>
@@ -129,23 +155,22 @@
           <summary>View 2024–25 cohort</summary>
           <div class="cohort-body">
             <div class="card-grid">
-              <!-- Duplicate cards as you add members -->
-              <div class="card team-card">
+              <div class="card">
                 <img src="images/2024_member_01.jpg" alt="Member Name" />
                 <h3>Member Name</h3>
                 <p class="lead">Role / Subteam</p>
               </div>
-              <div class="card team-card">
+              <div class="card">
                 <img src="images/2024_member_02.jpg" alt="Member Name" />
                 <h3>Member Name</h3>
                 <p class="lead">Role / Subteam</p>
               </div>
-              <div class="card team-card">
+              <div class="card">
                 <img src="images/2024_member_03.jpg" alt="Member Name" />
                 <h3>Member Name</h3>
                 <p class="lead">Role / Subteam</p>
               </div>
-              <div class="card team-card">
+              <div class="card">
                 <img src="images/2024_member_04.jpg" alt="Member Name" />
                 <h3>Member Name</h3>
                 <p class="lead">Role / Subteam</p>
@@ -159,12 +184,12 @@
           <summary>View 2023–24 cohort</summary>
           <div class="cohort-body">
             <div class="card-grid">
-              <div class="card team-card">
+              <div class="card">
                 <img src="images/2023_member_01.jpg" alt="Member Name" />
                 <h3>Member Name</h3>
                 <p class="lead">Role / Subteam</p>
               </div>
-              <div class="card team-card">
+              <div class="card">
                 <img src="images/2023_member_02.jpg" alt="Member Name" />
                 <h3>Member Name</h3>
                 <p class="lead">Role / Subteam</p>
@@ -176,28 +201,22 @@
         <p class="lead" style="margin-top:12px">
           Want your name added or removed? <a href="mailto:uonbiogreenproject@gmail.com">Email us</a>.
         </p>
-
-        <!-- ===== Reference block kept for later reuse (do NOT delete) =====
-        <div class="card-grid">
-          <div class="card team-card">
-            <img src="images/member_placeholder.jpg" alt="Member Name" />
-            <h3>Member Name</h3>
-            <p class="lead">Role / Subteam</p>
-          </div>
-        </div>
-        =================================================================== -->
       </div>
     </section>
   </main>
 
-  <!-- ===== Footer ===== -->
+  <!-- ===============================================================
+       FOOTER (bottom of every page)
+  =============================================================== -->
   <footer class="footer">
     <div class="container">
       <small>© 2025 The BioGreen Project</small>
     </div>
   </footer>
 
-  <!-- Mobile menu script -->
+  <!-- ===============================================================
+       SCRIPT — makes the hamburger button work on phones
+  =============================================================== -->
   <script>
     const btn = document.querySelector('.nav-toggle');
     const menu = document.getElementById('nav-menu');
