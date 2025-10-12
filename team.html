@@ -13,16 +13,25 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Global Nav -->
+  
+  <!-- ===== SITE HEADER (same on every page) ===== -->
   <header class="header">
     <nav class="nav">
-      <div class="brand">
+      <!-- Left: logo + name (full on desktop, short on mobile) -->
+      <a href="index.html" class="brand">
         <img src="images/logo.jpg" alt="BioGreen logo" />
-        <span class="brand-name">The BioGreen Project</span>
-      </div>
-      <div class="menu">
-        <a href="index.html">Home</a>
-        <a class="active" href="team.html">Team</a>
+        <!-- Two labels so non-coders don’t edit CSS: we hide/show via CSS -->
+        <span class="brand-name brand-name--full">The BioGreen Project</span>
+        <span class="brand-name brand-name--short">BioGreen</span>
+      </a>
+  
+      <!-- Right: hamburger on mobile -->
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">☰</button>
+  
+      <!-- Menu (links). Note: the green “active” class marks the current page -->
+      <div class="menu" id="nav-menu">
+        <a href="index.html" class="active">Home</a>
+        <a href="team.html">Team</a>
         <a href="blogs.html">Blogs</a>
         <a href="community.html">Community</a>
         <a href="contact.html">Contact</a>
