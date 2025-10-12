@@ -63,14 +63,14 @@ a:hover{opacity:.9}
 /* HERO (BANNER) — auto-fitting image + overlay */
 .hero{
   position:relative;
-  min-height:70vh; /* homepage height */
-  display:flex; align-items:center; justify-content:center;
+  min-height:66vh;
+  display:flex; align-items:center;
   color:#fff;
   background:
-    linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.65)),
-    var(--hero-img, url('images/hero_home.jpg')) center/cover no-repeat;
-  animation: heroFade 0.8s ease-out both;
+    linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.15) 55%, rgba(0,0,0,0) 100%),
+    var(--hero-img, url('images/hero_home.jpg')) center 40%/cover no-repeat;
 }
+.hero h1{ text-shadow:0 2px 16px rgba(0,0,0,.35) }
 .hero.small{
   min-height:38vh; /* smaller banners for inner pages */
   background:
