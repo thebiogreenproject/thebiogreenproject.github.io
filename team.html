@@ -1,36 +1,26 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Basic setup for browser compatibility and responsiveness -->
+  <!-- Basic setup -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Page title and description -->
   <title>Team — The BioGreen Project</title>
-  <meta name="description" content="Meet the team behind the BioGreen Project at the University of Nottingham — students driving sustainability through biotechnology." />
+  <meta name="description" content="Meet the BioGreen team — founder, team leads, members, and past cohorts." />
 
-  <!-- Link to main design file -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ===============================================================
-       HEADER (same on all pages)
-       Contains the site logo and navigation links.
-  =============================================================== -->
+  <!-- ===== SITE HEADER (same on every page) ===== -->
   <header class="header">
     <nav class="nav">
-      <!-- Left: logo + name -->
       <a href="index.html" class="brand">
         <img src="images/logo.jpg" alt="BioGreen logo" />
         <span class="brand-name brand-name--full">The BioGreen Project</span>
         <span class="brand-name brand-name--short">BioGreen</span>
       </a>
-
-      <!-- Hamburger (☰) for phones -->
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">☰</button>
-
-      <!-- Navigation menu -->
       <div class="menu" id="nav-menu">
         <a href="index.html">Home</a>
         <a href="team.html" class="active">Team</a>
@@ -41,44 +31,44 @@
     </nav>
   </header>
 
-  <!-- ===============================================================
-       HERO SECTION (top banner)
-       The image can be replaced via "banner_team.jpeg" in the images folder.
-  =============================================================== -->
+  <!-- ===== HERO (smaller banner for subpages) ===== -->
   <section class="hero small" style="--hero-img: url('images/banner_team.jpeg')">
     <div class="container">
-      <h1>Meet Our Team</h1>
-      <p class="lead">The people behind the BioGreen Project — from research and outreach to sustainability action.</p>
+      <h1 class="banner-title">Our Team</h1>
+      <p class="lead">Founder • Team Leads • Current Members</p>
+
+      <!-- QUICK-JUMP BUTTONS: links to sections below -->
+      <div class="actions" style="margin-top:14px">
+        <a class="btn" href="#lead">Founder</a>
+        <a class="btn" href="#leads">Team Leads</a>
+        <a class="btn" href="#members">Current Members</a>
+      </div>
     </div>
   </section>
 
-  <!-- ===============================================================
-       MAIN CONTENT (team cards)
-  =============================================================== -->
   <main class="container">
+    <!-- ===== Founder / Mentor ===== -->
+    <section id="lead" class="section">
+      <span class="kicker">Board of Director</span>
+      <h2>Founder and Mentor</h2>
 
-    <!-- ==================== FOUNDER SECTION ==================== -->
-    <section class="section">
-      <span class="kicker">Founder & Mentor</span>
-      <h2>Our Mentor</h2>
+      <!-- Founder card -->
       <div class="card-grid">
-        <!-- Founder card -->
         <a class="card team-card" href="https://www.linkedin.com/in/nagamani5/" target="_blank" rel="noopener">
           <img src="images/dr_bora.jpeg" alt="Dr Nagamani Bora" />
-          <h3>Dr. Nagamani Bora</h3>
+          <h3>Dr Nagamani Bora</h3>
           <p class="lead">Programme Director, Biotechnology — University of Nottingham</p>
-          <p class="lead">Founder of the BioGreen Project and guiding force behind our sustainability research.</p>
+          <p class="lead">Founder of the Biogreen Project and guiding force behind our research and growth.</p>
         </a>
       </div>
     </section>
 
-    <!-- ==================== TEAM LEADS ==================== -->
-    <section class="section">
-      <span class="kicker">Team Leads</span>
-      <h2>Leadership Team</h2>
+    <!-- ===== Team Leads ===== -->
+    <section id="leads" class="section">
+      <span class="kicker">Leadership</span>
+      <h2>Team Leads</h2>
       <div class="card-grid">
-
-        <!-- Each card below represents a lead member -->
+        <!-- Keep this exact order (as you had before) -->
         <a class="card team-card" href="https://www.linkedin.com/in/swarnadeep-saha-602880258" target="_blank" rel="noopener">
           <img src="images/team_swarnadeep.jpeg" alt="Swarnadeep Saha" />
           <h3>Swarnadeep Saha</h3>
@@ -117,74 +107,98 @@
       </div>
     </section>
 
-    <!-- ==================== CURRENT MEMBERS ==================== -->
-    <section class="section">
+    <!-- ===== Current Members ===== -->
+    <section id="members" class="section">
       <span class="kicker">Community</span>
       <h2>Current Members</h2>
-      <p class="lead">Interested in joining the team? Fill out our form or email us.</p>
 
-      <p style="margin-top:12px;">
-        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSf0mxkOro-APzu-nE0Ocooh55Ws2I-JzgxP7_fyViZTUE4yIQ/viewform?usp=dialog" target="_blank" rel="noopener">Join the Team</a>
+      <p style="margin-top:12px">
+        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSf0mxkOro-APzu-nE0Ocooh55Ws2I-JzgxP7_fyViZTUE4yIQ/viewform?usp=dialog" target="_blank" rel="noopener">Join The Team</a>
+        <!-- NOTE: contact email differs across pages; standardize later if needed -->
         <a class="btn" href="mailto:thebiogreenproject@gmail.com">Email Us</a>
       </p>
-    </section>
 
-    <!-- ==================== PAST TEAMS (optional collapsible) ==================== -->
-    <section class="section">
-      <span class="kicker">History</span>
-      <h2>Past Teams</h2>
-      <p class="lead">Explore previous cohorts and contributors.</p>
+      <!-- ===== Past Teams (collapsible cohorts) ===== -->
+      <div id="alumni" class="section">
+        <span class="kicker">History</span>
+        <h2>Past Teams</h2>
+        <p class="lead">Browse previous cohorts and contributors.</p>
 
-      <!-- Example: past year’s members -->
-      <details class="cohort">
-        <summary>View 2024–25 Cohort</summary>
-        <div class="cohort-body">
-          <div class="card-grid">
-            <div class="card team-card">
-              <img src="images/member_placeholder.jpg" alt="Member Name" />
-              <h3>Member Name</h3>
-              <p class="lead">Role / Subteam</p>
-            </div>
-            <div class="card team-card">
-              <img src="images/member_placeholder.jpg" alt="Member Name" />
-              <h3>Member Name</h3>
-              <p class="lead">Role / Subteam</p>
+        <!-- 2024–25 cohort -->
+        <details class="cohort">
+          <summary>View 2024–25 cohort</summary>
+          <div class="cohort-body">
+            <div class="card-grid">
+              <!-- Duplicate cards as you add members -->
+              <div class="card team-card">
+                <img src="images/2024_member_01.jpg" alt="Member Name" />
+                <h3>Member Name</h3>
+                <p class="lead">Role / Subteam</p>
+              </div>
+              <div class="card team-card">
+                <img src="images/2024_member_02.jpg" alt="Member Name" />
+                <h3>Member Name</h3>
+                <p class="lead">Role / Subteam</p>
+              </div>
+              <div class="card team-card">
+                <img src="images/2024_member_03.jpg" alt="Member Name" />
+                <h3>Member Name</h3>
+                <p class="lead">Role / Subteam</p>
+              </div>
+              <div class="card team-card">
+                <img src="images/2024_member_04.jpg" alt="Member Name" />
+                <h3>Member Name</h3>
+                <p class="lead">Role / Subteam</p>
+              </div>
             </div>
           </div>
-        </div>
-      </details>
+        </details>
 
-      <p class="lead" style="margin-top:12px;">
-        Want your name added or removed? <a href="mailto:uonbiogreenproject@gmail.com">Email us</a>.
-      </p>
+        <!-- 2023–24 cohort -->
+        <details class="cohort">
+          <summary>View 2023–24 cohort</summary>
+          <div class="cohort-body">
+            <div class="card-grid">
+              <div class="card team-card">
+                <img src="images/2023_member_01.jpg" alt="Member Name" />
+                <h3>Member Name</h3>
+                <p class="lead">Role / Subteam</p>
+              </div>
+              <div class="card team-card">
+                <img src="images/2023_member_02.jpg" alt="Member Name" />
+                <h3>Member Name</h3>
+                <p class="lead">Role / Subteam</p>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <p class="lead" style="margin-top:12px">
+          Want your name added or removed? <a href="mailto:uonbiogreenproject@gmail.com">Email us</a>.
+        </p>
+
+        <!-- ===== Reference block kept for later reuse (do NOT delete) =====
+        <div class="card-grid">
+          <div class="card team-card">
+            <img src="images/member_placeholder.jpg" alt="Member Name" />
+            <h3>Member Name</h3>
+            <p class="lead">Role / Subteam</p>
+          </div>
+        </div>
+        =================================================================== -->
+      </div>
     </section>
   </main>
 
-  <!-- ===============================================================
-       FOOTER (same as other pages)
-  =============================================================== -->
+  <!-- ===== Footer ===== -->
   <footer class="footer">
-    <div class="container cols">
-      <div>
-        <strong>The BioGreen Project</strong>
-        <p class="lead">Built by students, for sustainability.</p>
-      </div>
-      <div>
-        <small>© 2025 The BioGreen Project</small><br>
-        <small>
-          <a href="https://github.com/thebiogreenproject/thebiogreenproject.github.io" target="_blank" rel="noopener">
-            GitHub Repository
-          </a>
-        </small>
-      </div>
+    <div class="container">
+      <small>© 2025 The BioGreen Project</small>
     </div>
   </footer>
 
-  <!-- ===============================================================
-       SMALL SCRIPT for the mobile menu
-  =============================================================== -->
+  <!-- Mobile menu script -->
   <script>
-    // This script enables the mobile hamburger menu
     const btn = document.querySelector('.nav-toggle');
     const menu = document.getElementById('nav-menu');
     if (btn && menu) {
