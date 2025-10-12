@@ -74,25 +74,23 @@ a:hover{ opacity:.9; }
   transition:all 0.2s ease-in-out;
 }
 .btn:hover{ background:var(--accent-2); border-color:var(--accent-2); }
-.btn.secondary{ background:var(--accent); color:#fff; border:2px solid var(--accent); }
-.btn.secondary:hover{ background:var(--accent-2); border-color:var(--accent-2); }
+.btn--lg{ font-size:20px; padding:14px 28px; border-radius:20px; }
 
-/* Centered CTA row used on Home */
+/* Center button row */
 .btn-row{
-  display:flex; justify-content:center;
-  margin:24px 0 32px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  margin:24px auto 32px;
+  max-width:fit-content;
 }
 
-/* Optional centered wrapper for a single big button */
-.btn-center{
-  display:flex; justify-content:center; align-items:center;
-  margin-top:20px;
-}
-.btn-center .btn{
-  font-size:18px; font-weight:600; padding:14px 28px; border-radius:18px;
-}
+/* Optional centered section helpers */
+.section--center { text-align:center; }
+.section--no-top-border { border-top:0; padding-top:0; }
 
-/* == HERO (page banners) =================================================== */
+/* == HERO ============================================================ */
 .hero{
   position:relative; min-height:66vh;
   display:flex; align-items:center; color:#fff;
@@ -105,7 +103,6 @@ a:hover{ opacity:.9; }
 .hero h1{ font-size:clamp(32px,5vw,60px); font-weight:800; margin:0 0 12px; }
 .hero p{ max-width:800px; margin:0 0 20px; }
 .hero .actions{ display:flex; gap:12px; flex-wrap:wrap; margin-top:8px; }
-
 .hero.small{
   min-height:38vh;
   background:
@@ -113,118 +110,38 @@ a:hover{ opacity:.9; }
     var(--hero-img, url('images/banner_generic.jpg')) center/cover no-repeat;
 }
 
-/* == LAYOUT SECTIONS ======================================================= */
+/* == SECTIONS ============================================================ */
 .section{ padding:40px 0; border-top:1px solid #e5e7eb; }
 .section h2{ font-size:clamp(22px,3vw,32px); margin:0 0 16px; }
 
-/* == CARDS & GRIDS ========================================================= */
-.card-grid{
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px;
-}
+/* == CARDS & GRIDS ===================================================== */
+.card-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
 .card{
   background:var(--panel);
   border:1px solid #e5e7eb; border-radius:16px; padding:16px;
   transition:transform .15s ease, box-shadow .15s ease;
 }
 .card:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(0,0,0,.06); }
+.card img{ width:100%; height:180px; object-fit:cover; border-radius:12px; margin-bottom:10px; }
 
-/* Card images (blog/features) */
-.card img{
-  width:100%; height:180px; object-fit:cover;
-  border-radius:12px; margin-bottom:10px;
-}
-.card h3{ margin:8px 0 6px; }
-
-/* == TABLES ================================================================ */
+/* == TABLES ============================================================ */
 .table{
   width:100%; border-collapse:collapse; border:1px solid #e5e7eb;
   border-radius:10px; overflow:hidden;
 }
 .table th,.table td{ padding:12px; border-bottom:1px solid #e5e7eb; }
 
-/* == BADGES ================================================================ */
-.badge{
-  display:inline-block; padding:4px 8px;
-  border:1px solid #d1d5d3; border-radius:999px;
-  font-size:12px; color:var(--muted);
-}
-
-/* == LOGO ROWS ============================================================= */
+/* == LOGO ROWS ========================================================= */
 .logo-row{ display:flex; flex-wrap:wrap; gap:16px; align-items:center; }
-.logo-row img{
-  height:44px; background:#f6f8f7; border:1px solid #e5e7eb;
-  border-radius:10px; padding:8px;
-}
+.logo-row img{ height:44px; background:#f6f8f7; border:1px solid #e5e7eb; border-radius:10px; padding:8px; }
 
-/* == TEAM PAGE SPECIALS ==================================================== */
-#lead img, #leads img, #members img, #alumni img{
-  width:180px; height:180px; object-fit:cover;
-  border-radius:50%; margin:0 auto 12px; display:block; border:2px solid #e5e7eb;
-}
-#lead .card, #leads .card, #members .card, #alumni .card{ text-align:center; }
-#lead .lead, #leads .lead, #members .lead, #alumni .lead{
-  line-height:1.3; margin:4px 0; font-size:17px;
-}
-
-/* Expandable cohorts (alumni groups) */
-details.cohort{
-  border:1px solid #e5e7eb; border-radius:12px; background:var(--panel);
-  margin:12px 0; overflow:hidden;
-}
-details.cohort summary{
-  list-style:none; cursor:pointer; padding:14px 16px; font-weight:700;
-  display:flex; align-items:center; gap:10px; color:var(--ink);
-}
-details.cohort summary::-webkit-details-marker{ display:none; }
-details.cohort summary::before{
-  content:"▸"; display:inline-block; transform:translateY(-1px);
-  transition:transform .2s ease; color:var(--accent-2);
-}
-details.cohort[open] summary::before{ transform:rotate(90deg) translateY(-1px); }
-details.cohort .cohort-body{ padding:16px; border-top:1px solid #e5e7eb; }
-
-/* Clickable team cards (green theme) */
-.team-card{
-  background:#e9f8ee; border:1px solid #b7e1c1; border-radius:16px;
-  text-align:center; transition:all .25s ease-in-out;
-  text-decoration:none; color:inherit; padding:16px;
-}
-.team-card:hover{
-  background:#d4f0db; transform:translateY(-4px);
-  box-shadow:0 4px 10px rgba(0,0,0,.08);
-}
-.team-card img{
-  width:160px; height:160px; object-fit:cover; border-radius:50%;
-  margin:0 auto 12px; display:block; border:3px solid #ffffff;
-}
-.team-card:hover img{ transform:scale(1.03); transition:transform .2s ease-in-out; }
-.team-card h3{ margin:8px 0 4px; font-weight:700; color:var(--ink); }
-.team-card p.lead{ font-size:16px; color:var(--muted); margin:4px 0; }
-
-/* == GALLERY (legacy support) ============================================= */
-.gallery-grid{ columns:320px; column-gap:14px; }
-.gallery-grid img{
-  width:100%; height:300px; object-fit:cover; margin:0 0 14px;
-  border-radius:12px; border:1px solid #e5e7eb;
-}
-
-/* == FOOTER ================================================================ */
+/* == FOOTER ============================================================ */
 .footer{ border-top:1px solid #e5e7eb; background:#ffffff; }
-.footer .cols{
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:24px;
-}
+.footer .cols{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:24px; }
 .footer small{ color:var(--muted); }
 
-/* == RESPONSIVE (mobile tweaks) =========================================== */
+/* == RESPONSIVE ======================================================== */
 @media (max-width:700px){
   .menu{ gap:6px; }
   .menu a{ padding:8px 10px; }
-}
-
-/* == UTILITIES ============================================================= */
-/* Quick visually-hidden text for a11y-only content */
-.visually-hidden{
-  position:absolute !important; height:1px; width:1px;
-  overflow:hidden; clip:rect(1px,1px,1px,1px);
-  white-space:nowrap; border:0; padding:0; margin:-1px;
 }
