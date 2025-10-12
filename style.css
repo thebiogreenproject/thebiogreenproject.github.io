@@ -281,3 +281,13 @@ details.cohort .cohort-body {
   border-radius: 18px;
   text-align: center;
 }
+
+
+
+/* centered call-to-action row under a section */
+.btn-row{
+  display:flex;
+  justify-content:center;
+  margin:24px 0 32px; /* space above and before the next section border */
+}
+
