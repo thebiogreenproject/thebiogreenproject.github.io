@@ -1,34 +1,42 @@
 <!doctype html>
-<!--
-  BioGreen Website — Home
-  Purpose: Landing page with project pitch, CTAs, and quick links.
-  How to change the banner image:
-    - Replace images/hero_home.jpeg OR update the --hero-img inline style below.
-  Navigation: Update <nav> for new pages; keep 'active' on current page.
-  Accessibility: Keep meaningful alt text on all images.
--->
 <html lang="en">
 <head>
-  <!-- Meta: responsive + charset -->
+  <!-- Basic setup for browser compatibility and responsiveness -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- SEO -->
+  <!-- Website title (shows in browser tab) -->
   <title>BioGreen — Turning Brewery Waste into Greener Growth</title>
+
+  <!-- Short description for search engines and link previews -->
   <meta name="description" content="A biotechnology student-led sustainability movement at the University of Nottingham, using brewery spent grain for greener growth." />
 
-  <!-- Styles -->
+  <!-- Link to the main design file (style.css) -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- ===== HEADER / NAVBAR ===== -->
+
+  <!-- ===============================================================
+       HEADER (top navigation bar)
+       Contains logo, project name, and links to each page.
+       On mobile, it becomes a hamburger (☰) menu.
+  =============================================================== -->
   <header class="header">
     <nav class="nav">
+      <!-- Logo and project name -->
       <div class="brand">
         <img src="images/logo.jpg" alt="BioGreen logo" />
         <span class="brand-name">The BioGreen Project</span>
       </div>
-      <div class="menu">
+
+      <!-- Button that appears on phones to open/close menu -->
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+        ☰
+      </button>
+
+      <!-- The menu links -->
+      <div class="menu" id="nav-menu">
+        <!-- Add or remove pages here -->
         <a href="index.html" class="active">Home</a>
         <a href="team.html">Team</a>
         <a href="blogs.html">Blogs</a>
@@ -38,7 +46,11 @@
     </nav>
   </header>
 
-  <!-- ===== HERO SECTION ===== -->
+  <!-- ===============================================================
+       HERO SECTION (large banner at top)
+       The image is set inside the style attribute below.
+       Change "hero_home.jpeg" to update the background.
+  =============================================================== -->
   <section class="hero" style="--hero-img: url('images/hero_home.jpeg')">
     <div class="container">
       <span class="kicker">Welcome</span>
@@ -48,6 +60,8 @@
         Join us to build a community of brewers, growers, and students experimenting with 
         spent grain for better soils and stronger crops.
       </p>
+
+      <!-- Buttons to link to forms and the team page -->
       <div class="actions">
         <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfyrYPMFbpblwrjf735tpshw0kfAPxARhTBlcg-CUtjKqo_Og/viewform?usp=dialog" target="_blank" rel="noopener">Join the Movement</a>
         <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSf0mxkOro-APzu-nE0Ocooh55Ws2I-JzgxP7_fyViZTUE4yIQ/viewform?usp=dialog" target="_blank" rel="noopener">Apply for Team Roles</a>
@@ -56,9 +70,12 @@
     </div>
   </section>
 
-  <!-- ===== MAIN BODY ===== -->
+  <!-- ===============================================================
+       MAIN CONTENT AREA
+       Includes the project story, publication link, and old project.
+  =============================================================== -->
   <main class="container">
-    <!-- Story block -->
+    <!-- STORY SECTION -->
     <section class="section">
       <h2>Our Story in a Nutshell</h2>
       <p>
@@ -72,18 +89,20 @@
       </p>
     </section>
 
-    <!-- ===== RESEARCH BUTTON (centered perfectly) ===== -->
+    <!-- BUTTON SECTION (centered perfectly on all devices) -->
     <section class="section section--center section--no-top-border">
       <div class="btn-row">
+        <!-- Replace link if you publish a new paper -->
         <a class="btn btn--lg" href="https://dx.doi.org/10.12692/ijb/27.3.136-144" target="_blank" rel="noopener">
           Visit Our Recent Research Publication
         </a>
       </div>
     </section>
 
-    <!-- ===== PREVIOUS PROJECT ===== -->
+    <!-- PREVIOUS PROJECT SECTION -->
     <section class="section">
       <h2>Our Previous Research Project</h2>
+      <!-- Replace the image and link as needed -->
       <a href="old-project.html" target="_blank" rel="noopener"  
          style="display:block; position:relative; border-radius:16px; overflow:hidden; text-decoration:none;">
         <img src="images/plastic_recycle.png" alt="Previous BioGreen project banner" 
@@ -97,7 +116,10 @@
     </section>
   </main>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- ===============================================================
+       FOOTER (bottom of every page)
+       Contains copyright and GitHub link.
+  =============================================================== -->
   <footer class="footer">
     <div class="container cols">
       <div>
@@ -114,5 +136,20 @@
       </div>
     </div>
   </footer>
+
+  <!-- ===============================================================
+       SMALL SCRIPT for the mobile menu
+       Allows the ☰ button to show or hide links on phones.
+  =============================================================== -->
+  <script>
+    const btn = document.querySelector('.nav-toggle');
+    const menu = document.getElementById('nav-menu');
+    if (btn && menu) {
+      btn.addEventListener('click', () => {
+        const open = menu.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+  </script>
 </body>
 </html>
