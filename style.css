@@ -44,45 +44,58 @@ a:hover{opacity:.9}
 .menu a.active, .menu a:focus{border-color:var(--ring); box-shadow:0 0 0 4px var(--ring)}
 .menu a:hover{background:#f1f5f2}
 
-/* BUTTONS */
+/* BUTTONS — green border on all buttons */
 .btn{
   display:inline-block;
   padding:10px 14px;
   border-radius:12px;
+  font-weight:600;
   background:var(--accent);
   color:#fff;
-  font-weight:600;
-  border:1px solid rgba(0,0,0,.1);
+  border:2px solid var(--accent);        /* green border */
+  transition:all .2s ease-in-out;
+}
+.btn:hover{
+  background:var(--accent-2);
+  border-color:var(--accent-2);
 }
 .btn.secondary{
   background:transparent;
   color:var(--accent-2);
-  border:1px solid #d1d5d3;
+  border:2px solid var(--accent);        /* green border */
+}
+.btn.secondary:hover{
+  background:var(--accent);
+  color:#fff;
 }
 
-/* HERO (BANNER) — auto-fitting image + overlay */
+/* HERO (BANNER) — stronger overlay + readable text */
 .hero{
   position:relative;
   min-height:66vh;
   display:flex; align-items:center;
   color:#fff;
   background:
-    linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.15) 55%, rgba(0,0,0,0) 100%),
-    var(--hero-img, url('images/hero_home.jpg')) center 40%/cover no-repeat;
+    linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.30) 100%),
+    var(--hero-img, url('images/hero_home.jpg')) center 45%/cover no-repeat;
 }
-.hero h1{ text-shadow:0 2px 16px rgba(0,0,0,.35) }
+.hero .container{z-index:1; text-align:left; padding:80px 24px}
+.hero h1,
+.hero p,
+.hero .kicker{ color:#fff; text-shadow:0 2px 12px rgba(0,0,0,0.6); }
+.hero h1{font-size:clamp(32px,5vw,60px); font-weight:800; margin:0 0 12px}
+.hero p{max-width:800px; margin:0 0 20px}
+.hero .actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:8px}
+/* Make secondary buttons readable on dark hero */
+.hero .btn.secondary{ color:#fff; }
+
+/* Smaller banners for inner pages */
 .hero.small{
-  min-height:38vh; /* smaller banners for inner pages */
+  min-height:38vh;
   background:
-    linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.6)),
+    linear-gradient(180deg, rgba(0,0,0,0.50), rgba(0,0,0,0.35)),
     var(--hero-img, url('images/banner_generic.jpg')) center/cover no-repeat;
 }
-@keyframes heroFade{from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none}}
-
-.hero .container{z-index:1; text-align:left; padding:80px 24px}
-.hero h1{font-size:clamp(32px,5vw,60px); font-weight:800; margin:0 0 12px}
-.hero p{color:rgba(255,255,255,.9); max-width:800px; margin:0 0 20px}
-.hero .actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:8px}
 
 /* SECTION LAYOUT */
 .section{padding:40px 0; border-top:1px solid #e5e7eb}
@@ -102,12 +115,6 @@ a:hover{opacity:.9}
   margin-bottom:6px;
 }
 .lead{font-size:18px; color:var(--muted)}
-
-.hero .kicker {
-  color: #ffffff; /* your bright green accent */
-  font-weight: 600; /* optional: make it bolder */
-}
-
 
 /* FOOTER */
 .footer{border-top:1px solid #e5e7eb; background:#ffffff}
