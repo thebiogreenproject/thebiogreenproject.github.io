@@ -21,7 +21,6 @@
        Contains logo, project name, and links to each page.
        On mobile, it becomes a hamburger (☰) menu.
   =============================================================== -->
-  <!-- ===== SITE HEADER (same on every page) ===== -->
   <header class="header">
     <nav class="nav">
       <!-- Left: logo + name (full on desktop, short on mobile) -->
@@ -45,7 +44,6 @@
       </div>
     </nav>
   </header>
-
 
   <!-- ===============================================================
        HERO SECTION (large banner at top)
@@ -143,6 +141,7 @@
        Allows the ☰ button to show or hide links on phones.
   =============================================================== -->
   <script>
+    // This script makes the mobile hamburger open and close the dropdown menu
     const btn = document.querySelector('.nav-toggle');
     const menu = document.getElementById('nav-menu');
     if (btn && menu) {
