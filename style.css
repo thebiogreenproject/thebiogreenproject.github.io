@@ -3,8 +3,8 @@
   --panel:#f6f8f7;
   --ink:#0a0d0b;
   --muted:#5b6b62;
-  --accent:#16a34a;
-  --accent-2:#0e7c3a;
+  --accent:#16a34a;   /* main green */
+  --accent-2:#0e7c3a; /* darker hover green */
   --ring:rgba(22,163,74,.25);
   --max:1100px;
 }
@@ -44,32 +44,32 @@ a:hover{opacity:.9}
 .menu a.active, .menu a:focus{border-color:var(--ring); box-shadow:0 0 0 4px var(--ring)}
 .menu a:hover{background:#f1f5f2}
 
-/* BUTTONS — green border on all buttons */
+/* BUTTONS — all green filled */
 .btn{
   display:inline-block;
   padding:10px 14px;
   border-radius:12px;
   font-weight:600;
-  background:var(--accent);
   color:#fff;
-  border:2px solid var(--accent);        /* green border */
-  transition:all .2s ease-in-out;
+  background:var(--accent);
+  border:2px solid var(--accent);
+  transition:all 0.2s ease-in-out;
 }
 .btn:hover{
   background:var(--accent-2);
   border-color:var(--accent-2);
 }
 .btn.secondary{
-  background:transparent;
-  color:var(--accent-2);
-  border:2px solid var(--accent);        /* green border */
-}
-.btn.secondary:hover{
   background:var(--accent);
   color:#fff;
+  border:2px solid var(--accent);
+}
+.btn.secondary:hover{
+  background:var(--accent-2);
+  border-color:var(--accent-2);
 }
 
-/* HERO (BANNER) — stronger overlay + readable text */
+/* HERO (BANNER) — readable overlay + per-page image */
 .hero{
   position:relative;
   min-height:66vh;
@@ -86,8 +86,6 @@ a:hover{opacity:.9}
 .hero h1{font-size:clamp(32px,5vw,60px); font-weight:800; margin:0 0 12px}
 .hero p{max-width:800px; margin:0 0 20px}
 .hero .actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:8px}
-/* Make secondary buttons readable on dark hero */
-.hero .btn.secondary{ color:#fff; }
 
 /* Smaller banners for inner pages */
 .hero.small{
