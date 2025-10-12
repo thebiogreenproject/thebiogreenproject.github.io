@@ -17,25 +17,28 @@
   <!-- ===== SITE HEADER (same on every page) ===== -->
   <header class="header">
     <nav class="nav">
-      <!-- Left: logo + full name (links back to home) -->
+      <!-- Left: logo + name (full on desktop, short on mobile) -->
       <a href="team.html" class="brand">
         <img src="images/logo.jpg" alt="BioGreen logo" />
-        <span class="brand-name">The BioGreen Project</span>
+        <!-- Two labels so non-coders don’t edit CSS: we hide/show via CSS -->
+        <span class="brand-name brand-name--full">The BioGreen Project</span>
+        <span class="brand-name brand-name--short">The BioGreen Project</span>
       </a>
-
-      <!-- Right: hamburger icon for mobile -->
+  
+      <!-- Right: hamburger on mobile -->
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">☰</button>
-
-      <!-- Menu links. "active" = current page -->
+  
+      <!-- Menu (links). Note: the green “active” class marks the current page -->
       <div class="menu" id="nav-menu">
-        <a href="index.html">Home</a>
-        <a href="team.html" class="active">Team</a>
+        <a href="index.html" class="active">Home</a>
+        <a href="team.html">Team</a>
         <a href="blogs.html">Blogs</a>
         <a href="community.html">Community</a>
         <a href="contact.html">Contact</a>
       </div>
     </nav>
   </header>
+
 
   <!-- Page banner: change image via --hero-img -->
   <section class="hero small" style="--hero-img: url('images/banner_team.jpeg')">
