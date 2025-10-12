@@ -103,6 +103,12 @@ a:hover{opacity:.9}
 }
 .lead{font-size:18px; color:var(--muted)}
 
+.hero .kicker {
+  color: #ffffff; /* your bright green accent */
+  font-weight: 600; /* optional: make it bolder */
+}
+
+
 /* FOOTER */
 .footer{border-top:1px solid #e5e7eb; background:#ffffff}
 .footer .cols{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:24px}
