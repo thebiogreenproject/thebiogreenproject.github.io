@@ -1,79 +1,51 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Basic setup for responsiveness -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Page title and description -->
   <title>Blogs — The BioGreen Project</title>
-  <meta name="description" content="Read updates, student reflections, and sustainability insights from the BioGreen Project." />
-
-  <!-- Link to main stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- ===============================================================
-       HEADER (identical across all pages)
-       On phones, this collapses into a ☰ menu button.
-  =============================================================== -->
   <header class="header">
     <nav class="nav">
-      <!-- Left: logo + project name -->
-      <a href="index.html" class="brand">
-        <img src="images/logo.jpg" alt="BioGreen logo" />
-        <!-- Two name versions for different screen sizes -->
-        <span class="brand-name brand-name--full">The BioGreen Project</span>
-        <span class="brand-name brand-name--short">BioGreen</span>
-      </a>
-
-      <!-- Mobile hamburger toggle -->
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">☰</button>
-
-      <!-- Navigation menu -->
-      <div class="menu" id="nav-menu">
+      <div class="brand">
+        <img src="images/logo.jpg" alt="Biogreen logo" />
+        <span class="brand-name">The BioGreen Project</span>
+      </div>
+      <div class="menu">
         <a href="index.html">Home</a>
         <a href="team.html">Team</a>
-        <a href="blogs.html" class="active">Blogs</a>
+        <a class="active" href="blogs.html">Blogs</a>
         <a href="community.html">Community</a>
         <a href="contact.html">Contact</a>
       </div>
     </nav>
   </header>
 
-  <!-- ===============================================================
-       HERO SECTION (top banner)
-       Background image can be changed easily below.
-  =============================================================== -->
+  <!-- Banner: swap image via --hero-img -->
   <section class="hero small" style="--hero-img: url('images/banner_blogs.jpeg')">
     <div class="container">
       <h1 class="banner-title">Blogs</h1>
       <p class="lead">Updates from the field, partner stories, and student reflections.</p>
-
-      <!-- Button for contributors -->
       <div class="actions" style="margin-top:14px">
+        <!-- Pitch link for contributors -->
         <a class="btn" href="mailto:uonbiogreenproject@gmail.com">Pitch a Post</a>
       </div>
     </div>
   </section>
 
-  <!-- ===============================================================
-       MAIN CONTENT AREA — where posts will go
-  =============================================================== -->
   <main class="container">
     <section class="section">
       <h2>Latest Posts</h2>
 
-      <!-- Placeholder until blog posts are added -->
+      <!-- Placeholder: switch to a list when you have posts -->
       <p class="lead" style="text-align:center; margin:40px 0;">
         No blog posts yet — check back soon for updates from our team.
       </p>
 
-      <!-- ============================================================
-           EXAMPLE BLOG CARDS (keep these commented as a template)
-           Uncomment and duplicate for real posts.
-      ============================================================ -->
+      <!-- Example cards to copy when you add posts.
+           Keep these commented until you have content. -->
       <!--
       <div class="card-grid">
         <a class="card" href="posts/first-planting-day.html" title="Read post">
@@ -81,13 +53,11 @@
           <h3>First Planting Day: What Worked, What Didn’t</h3>
           <p class="lead">Notes from our broad bean trials and soil prep tips from volunteers.</p>
         </a>
-
         <a class="card" href="posts/brewer-spotlight.html" title="Read post">
           <img src="images/blog_placeholder_02.jpg" alt="Brewery partner" />
           <h3>Brewer Spotlight: From Kettles to Gardens</h3>
           <p class="lead">How local brewers are helping us close the loop on waste.</p>
         </a>
-
         <a class="card" href="posts/community-meetup-nov.html" title="Read post">
           <img src="images/blog_placeholder_03.jpg" alt="Community meetup" />
           <h3>Community Meetup Recap — November</h3>
@@ -98,38 +68,10 @@
     </section>
   </main>
 
-  <!-- ===============================================================
-       FOOTER (shared across all pages)
-  =============================================================== -->
   <footer class="footer">
-    <div class="container cols">
-      <div>
-        <strong>The BioGreen Project</strong>
-        <p class="lead">Built by students, for sustainability.</p>
-      </div>
-      <div>
-        <small>© 2025 The BioGreen Project</small><br>
-        <small>
-          <a href="https://github.com/thebiogreenproject/thebiogreenproject.github.io" target="_blank" rel="noopener">
-            GitHub Repository
-          </a>
-        </small>
-      </div>
+    <div class="container">
+      <small>© 2025 The BioGreen Project</small>
     </div>
   </footer>
-
-  <!-- ===============================================================
-       SCRIPT — enables mobile hamburger menu
-  =============================================================== -->
-  <script>
-    const btn = document.querySelector('.nav-toggle');
-    const menu = document.getElementById('nav-menu');
-    if (btn && menu) {
-      btn.addEventListener('click', () => {
-        const open = menu.classList.toggle('open');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-    }
-  </script>
 </body>
 </html>
