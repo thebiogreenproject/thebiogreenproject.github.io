@@ -21,22 +21,22 @@
        Contains logo, project name, and links to each page.
        On mobile, it becomes a hamburger (☰) menu.
   =============================================================== -->
+  <!-- ===== SITE HEADER (same on every page) ===== -->
   <header class="header">
     <nav class="nav">
-      <!-- Logo and project name -->
-      <div class="brand">
+      <!-- Left: logo + name (full on desktop, short on mobile) -->
+      <a href="index.html" class="brand">
         <img src="images/logo.jpg" alt="BioGreen logo" />
-        <span class="brand-name">The BioGreen Project</span>
-      </div>
-
-      <!-- Button that appears on phones to open/close menu -->
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
-        ☰
-      </button>
-
-      <!-- The menu links -->
+        <!-- Two labels so non-coders don’t edit CSS: we hide/show via CSS -->
+        <span class="brand-name brand-name--full">The BioGreen Project</span>
+        <span class="brand-name brand-name--short">BioGreen</span>
+      </a>
+  
+      <!-- Right: hamburger on mobile -->
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">☰</button>
+  
+      <!-- Menu (links). Note: the green “active” class marks the current page -->
       <div class="menu" id="nav-menu">
-        <!-- Add or remove pages here -->
         <a href="index.html" class="active">Home</a>
         <a href="team.html">Team</a>
         <a href="blogs.html">Blogs</a>
@@ -45,6 +45,7 @@
       </div>
     </nav>
   </header>
+
 
   <!-- ===============================================================
        HERO SECTION (large banner at top)
