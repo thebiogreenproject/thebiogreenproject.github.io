@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Shared header + navigation -->
   <header class="header">
     <nav class="nav">
       <div class="brand">
@@ -23,48 +24,52 @@
     </nav>
   </header>
 
-  <!-- Banner for Blogs page -->
+  <!-- Page banner (change image by updating --hero-img path) -->
   <section class="hero small" style="--hero-img: url('images/banner_blogs.jpeg')">
     <div class="container">
       <h1 class="banner-title">Blogs</h1>
       <p class="lead">Updates from the field, partner stories, and student reflections.</p>
       <div class="actions" style="margin-top:14px">
+        <!-- Opens default email to pitch a post -->
         <a class="btn" href="mailto:uonbiogreenproject@gmail.com">Pitch a Post</a>
       </div>
     </div>
   </section>
-<main class="container">
-  <section class="section">
-    <h2>Latest Posts</h2>
 
-    <!-- No posts yet message -->
-    <p class="lead" style="text-align:center; margin:40px 0;">
-      No blog posts yet — check back soon for updates from our team.
-    </p>
+  <!-- Main content area for posts -->
+  <main class="container">
+    <section class="section">
+      <h2>Latest Posts</h2>
 
-    <!-- Example posts (keep commented for now) -->
-    <!--
-    <div class="card-grid">
-      <a class="card" href="#" title="Read post">
-        <img src="images/blog_placeholder_01.jpg" alt="Spent grain at the allotment" />
-        <h3>First Planting Day: What Worked, What Didn’t</h3>
-        <p class="lead">Notes from our broad bean trials and soil prep tips from volunteers.</p>
-      </a>
-      <a class="card" href="#" title="Read post">
-        <img src="images/blog_placeholder_02.jpg" alt="Brewery partner" />
-        <h3>Brewer Spotlight: From Kettles to Gardens</h3>
-        <p class="lead">How local brewers are helping us close the loop on waste.</p>
-      </a>
-      <a class="card" href="#" title="Read post">
-        <img src="images/blog_placeholder_03.jpg" alt="Community meetup" />
-        <h3>Community Meetup Recap — November</h3>
-        <p class="lead">What we shared, what we learned, and what’s next.</p>
-      </a>
-    </div>
-    -->
-  </section>
-</main>
+      <!-- If no posts are published yet, this message will show -->
+      <p class="lead" style="text-align:center; margin:40px 0;">
+        No blog posts yet — check back soon for updates from our team.
+      </p>
 
+      <!-- EXAMPLE POSTS
+           - Keep commented until you have real posts.
+           - Duplicate <a class="card"> blocks to add more. -->
+      <!--
+      <div class="card-grid">
+        <a class="card" href="#" title="Read post">
+          <img src="images/blog_placeholder_01.jpg" alt="Spent grain at the allotment" />
+          <h3>First Planting Day: What Worked, What Didn’t</h3>
+          <p class="lead">Notes from our broad bean trials and soil prep tips from volunteers.</p>
+        </a>
+        <a class="card" href="#" title="Read post">
+          <img src="images/blog_placeholder_02.jpg" alt="Brewery partner" />
+          <h3>Brewer Spotlight: From Kettles to Gardens</h3>
+          <p class="lead">How local brewers are helping us close the loop on waste.</p>
+        </a>
+        <a class="card" href="#" title="Read post">
+          <img src="images/blog_placeholder_03.jpg" alt="Community meetup" />
+          <h3>Community Meetup Recap — November</h3>
+          <p class="lead">What we shared, what we learned, and what’s next.</p>
+        </a>
+      </div>
+      -->
+    </section>
+  </main>
 
   <footer class="footer">
     <div class="container">
