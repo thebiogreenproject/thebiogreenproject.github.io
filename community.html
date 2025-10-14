@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Shared header + navigation -->
   <header class="header">
     <nav class="nav">
       <div class="brand">
@@ -22,6 +23,7 @@
     </nav>
   </header>
 
+  <!-- Banner for Community page -->
   <section class="hero small" style="--hero-img: url('images/banner_community.jpg')">
     <div class="container">
       <h1 class="banner-title">Community</h1>
@@ -30,27 +32,34 @@
   </section>
 
   <main class="container">
+    <!-- Join Us: quick actions -->
     <section class="section">
       <h2>Join Us</h2>
       <p>We’re always looking for students, gardeners, and brewers to get involved.</p>
       <p>
+        <!-- External Google Forms (open in new tab) -->
         <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfyrYPMFbpblwrjf735tpshw0kfAPxARhTBlcg-CUtjKqo_Og/viewform?usp=dialog" target="_blank" rel="noopener">Sign up (Interest Form)</a>
         <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSf0mxkOro-APzu-nE0Ocooh55Ws2I-JzgxP7_fyViZTUE4yIQ/viewform?usp=dialog" target="_blank" rel="noopener">Apply for Team Roles</a>
         <a class="btn" href="mailto:uonbiogreenproject@gmail.com">Email Us</a>
       </p>
     </section>
 
+    <!-- Events table (simple, editable) -->
     <section class="section">
       <h2>Events</h2>
       <table class="table">
-        <thead><tr><th>Date</th><th>Time</th><th>Event</th><th>Location</th></tr></thead>
+        <thead>
+          <tr><th>Date</th><th>Time</th><th>Event</th><th>Location</th></tr>
+        </thead>
         <tbody>
+          <!-- Add more rows as events are planned -->
           <tr><td>15 Oct 2025</td><td>14:00 - 16:00</td><td>Launch & Social</td><td>The Hive @ The Barn, SB Campus</td></tr>
         </tbody>
       </table>
       <p class="lead">This table will be updated as new events are scheduled. Stay tuned :)</p>
     </section>
 
+    <!-- Partnerships (logos) -->
     <section class="section">
       <h2>Partnerships</h2>
       <div class="logo-row">
@@ -58,15 +67,18 @@
         <img src="images/logo_uon.jpg" alt="University of Nottingham">
       </div>
       <p class="lead">Interested in partnering? <a href="contact.html">Get in touch</a>.</p>
-<!-- 
+
+      <!-- Optional feature stories (kept commented until used) -->
+      <!--
       <h3>Feature Stories</h3>
       <div class="card-grid">
         <div class="card"><strong>Brewer spotlight:</strong> Using spent grain for local growers.</div>
         <div class="card"><strong>Volunteer voice:</strong> Our first planting day!</div>
       </div>
+      -->
     </section>
   </main>
- -->
+
   <footer class="footer">
     <div class="container">
       <small>© 2025 The BioGreen Project</small>
