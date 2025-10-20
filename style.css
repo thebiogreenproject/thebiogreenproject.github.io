@@ -86,13 +86,6 @@ a{color:var(--accent-2);text-decoration:none} a:hover{opacity:.9}
 /* Newsletter inputs */
 input[type=email]{padding:10px 12px;border-radius:10px;border:1px solid #d1d5db;margin-right:8px;min-width:260px}
 
-/* Side decorative leaves (desktop only) */
-.side-decor{position:fixed;top:120px;bottom:80px;opacity:.12;z-index:0;pointer-events:none}
-.side-decor.left{left:8px}
-.side-decor.right{right:8px}
-.side-decor img{height:70vh;object-fit:contain}
-@media(max-width:1024px){.side-decor{display:none}}
-
 /* Scroll-in animations (subtle) */
 .reveal{opacity:0;transform:translateY(12px);transition:opacity .6s ease, transform .6s ease}
 .reveal.show{opacity:1;transform:none}
