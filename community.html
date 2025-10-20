@@ -1,88 +1,93 @@
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Community — The BioGreen Project</title>
+  <title>Community — The BioGreen</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Shared header + navigation -->
   <header class="header">
     <nav class="nav">
       <div class="brand">
         <img src="images/logo.jpg" alt="Biogreen logo" />
-        <span class="brand-name">The BioGreen Project</span>
+        <span class="brand-name">The BioGreen</span>
       </div>
+      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
       <div class="menu">
         <a href="index.html">Home</a>
-        <a href="team.html">Team</a>
-        <a href="blogs.html">Blogs</a>
+        <a href="projects/brewery-waste.html">Projects</a>
+        <a href="news.html">News</a>
         <a class="active" href="community.html">Community</a>
+        <a href="partners.html">Global Partners</a>
+        <a href="team.html">Team</a>
         <a href="contact.html">Contact</a>
       </div>
     </nav>
   </header>
 
-  <!-- Banner for Community page -->
   <section class="hero small" style="--hero-img: url('images/banner_community.jpg')">
     <div class="container">
       <h1 class="banner-title">Community</h1>
-      <p class="lead">Get involved, come to events, and partner with us.</p>
+      <p class="lead">For farmers, students, and universities who want to join us.</p>
     </div>
   </section>
 
+  <div class="side-decor left"><img src="images/side_leaf_left.png" alt="decorative"></div>
+  <div class="side-decor right"><img src="images/side_leaf_right.png" alt="decorative"></div>
+
   <main class="container">
-    <!-- Join Us: quick actions -->
-    <section class="section">
+    <section class="section reveal">
       <h2>Join Us</h2>
-      <p>We’re always looking for students, gardeners, and brewers to get involved.</p>
+      <p>We’re always looking for students, growers, and partners to get involved.</p>
       <p>
-        <!-- External Google Forms (open in new tab) -->
         <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfyrYPMFbpblwrjf735tpshw0kfAPxARhTBlcg-CUtjKqo_Og/viewform?usp=dialog" target="_blank" rel="noopener">Sign up (Interest Form)</a>
         <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSf0mxkOro-APzu-nE0Ocooh55Ws2I-JzgxP7_fyViZTUE4yIQ/viewform?usp=dialog" target="_blank" rel="noopener">Apply for Team Roles</a>
         <a class="btn" href="mailto:uonbiogreenproject@gmail.com">Email Us</a>
       </p>
     </section>
 
-    <!-- Events table (simple, editable) -->
-    <section class="section">
+    <section class="section reveal">
       <h2>Events</h2>
       <table class="table">
         <thead>
           <tr><th>Date</th><th>Time</th><th>Event</th><th>Location</th></tr>
         </thead>
         <tbody>
-          <!-- Add more rows as events are planned -->
           <tr><td>15 Oct 2025</td><td>14:00 - 16:00</td><td>Launch & Social</td><td>The Hive @ The Barn, SB Campus</td></tr>
         </tbody>
       </table>
-      <p class="lead">This table will be updated as new events are scheduled. Stay tuned :)</p>
+      <p class="lead">This table will be updated as new events are scheduled.</p>
     </section>
 
-    <!-- Partnerships (logos) -->
-    <section class="section">
+    <section class="section reveal">
       <h2>Partnerships</h2>
+      <!-- BEGINNER NOTE: Copy any <img> line below to add a logo. Keep alt text clear. -->
       <div class="logo-row">
         <img src="images/logo_neonraptor.jpg" alt="Neon Raptor Brewing Co.">
         <img src="images/logo_uon.jpg" alt="University of Nottingham">
+        <!-- <img src="images/logo_new_partner.png" alt="Partner Name"> -->
       </div>
       <p class="lead">Interested in partnering? <a href="contact.html">Get in touch</a>.</p>
-
-      <!-- Optional feature stories (kept commented until used) -->
-      <!--
-      <h3>Feature Stories</h3>
-      <div class="card-grid">
-        <div class="card"><strong>Brewer spotlight:</strong> Using spent grain for local growers.</div>
-        <div class="card"><strong>Volunteer voice:</strong> Our first planting day!</div>
-      </div>
-      -->
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <small>© 2025 The BioGreen Project</small>
+    <div class="container cols">
+      <div>
+        <strong>The BioGreen</strong>
+        <p class="lead">Built by students, for sustainability.</p>
+      </div>
+      <div>
+        <p>Contact us: <a href="mailto:uonbiogreenproject@gmail.com">uonbiogreenproject@gmail.com</a></p>
+        <p><a href="https://www.instagram.com/thebiogreenproject_uon" target="_blank">Instagram</a> • <a href="https://github.com/thebiogreenproject" target="_blank">GitHub</a></p>
+        <small>© 2025 The BioGreen</small>
+      </div>
     </div>
   </footer>
+
+  <script>const t=document.querySelector('.menu-toggle'),m=document.querySelector('.menu');t.addEventListener('click',()=>m.classList.toggle('open'));
+  const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('show')),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));</script>
 </body>
 </html>
+</file>
