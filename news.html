@@ -1,0 +1,78 @@
+<file path="news.html">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>News — The BioGreen</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <div class="brand">
+        <img src="images/logo.jpg" alt="Biogreen logo" />
+        <span class="brand-name">The BioGreen</span>
+      </div>
+      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="projects/brewery-waste.html">Projects</a>
+        <a class="active" href="news.html">News</a>
+        <a href="community.html">Community</a>
+        <a href="partners.html">Global Partners</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero small" style="--hero-img: url('images/banner_news.jpg')">
+    <div class="container">
+      <h1 class="banner-title">News</h1>
+      <p class="lead">Updates from the field, partner stories, and student reflections.</p>
+      <div class="actions" style="margin-top:14px">
+        <a class="btn" href="mailto:uonbiogreenproject@gmail.com">Pitch a Story</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="side-decor left"><img src="images/side_leaf_left.png" alt="decorative"></div>
+  <div class="side-decor right"><img src="images/side_leaf_right.png" alt="decorative"></div>
+
+  <main class="container">
+    <section class="section reveal">
+      <h2>Latest Posts</h2>
+      <p class="lead" style="text-align:center; margin:40px 0;">No news posts yet — check back soon.</p>
+      <!-- BEGINNER NOTE: Copy one of these cards and update the text/image -->
+      <!--
+      <div class="card-grid">
+        <a class="card" href="#">
+          <img src="images/blog_placeholder_01.jpg" alt="Spent grain at the allotment" />
+          <h3>First Planting Day: What Worked, What Didn’t</h3>
+          <p class="lead">Notes from our broad bean trials and soil prep tips from volunteers.</p>
+        </a>
+      </div>
+      -->
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container cols">
+      <div>
+        <strong>The BioGreen</strong>
+        <p class="lead">Built by students, for sustainability.</p>
+      </div>
+      <div>
+        <p>Contact us: <a href="mailto:uonbiogreenproject@gmail.com">uonbiogreenproject@gmail.com</a></p>
+        <p><a href="https://www.instagram.com/thebiogreenproject_uon" target="_blank">Instagram</a> • <a href="https://github.com/thebiogreenproject" target="_blank">GitHub</a></p>
+        <small>© 2025 The BioGreen</small>
+      </div>
+    </div>
+  </footer>
+
+  <script>const t=document.querySelector('.menu-toggle'),m=document.querySelector('.menu');t.addEventListener('click',()=>m.classList.toggle('open'));
+  const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('show')),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));</script>
+</body>
+</html>
+</file>
