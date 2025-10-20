@@ -1,67 +1,71 @@
+<file path="contact.html">
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact — BioGreen Project</title>
+  <title>Contact — The BioGreen</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Shared site header -->
   <header class="header">
     <nav class="nav">
       <div class="brand">
         <img src="images/logo.jpg" alt="BioGreen logo" />
-        <span class="brand-name">The BioGreen Project</span>
+        <span class="brand-name">The BioGreen</span>
       </div>
+      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
       <div class="menu">
         <a href="index.html">Home</a>
-        <a href="team.html">Team</a>
-        <a href="blogs.html">Blogs</a>
+        <a href="projects/brewery-waste.html">Projects</a>
+        <a href="news.html">News</a>
         <a href="community.html">Community</a>
+        <a href="partners.html">Global Partners</a>
+        <a href="team.html">Team</a>
         <a class="active" href="contact.html">Contact</a>
       </div>
     </nav>
   </header>
 
-  <!-- Contact banner -->
   <section class="hero small" style="--hero-img: url('images/banner_contact.jpg')">
     <div class="container">
-      <h1 class="banner-title">Contact</h1>
+      <h1>Contact</h1>
       <p class="lead">We’d love to hear from you.</p>
     </div>
   </section>
 
   <main class="container">
-    <!-- Simple contact options -->
-    <section class="section">
+    <section class="section reveal">
       <h2>Contact us</h2>
       <p>Prefer email? <a href="mailto:uonbiogreenproject@gmail.com">uonbiogreenproject@gmail.com</a></p>
       <p class="lead">Or reach out on social:</p>
-
-      <!-- Cards can be replaced with icons or list items later -->
       <div class="card-grid">
-        <a class="card" href="https://www.instagram.com/thebiogreenproject_uon?utm_source=ig_web_button_share_sheet&igsh=MTY0emczeDA1OXNtYQ==" target="_blank" rel="noopener">Instagram</a>
+        <a class="card" href="https://www.instagram.com/thebiogreenproject_uon" target="_blank" rel="noopener">Instagram</a>
         <a class="card" href="https://github.com/thebiogreenproject" target="_blank" rel="noopener">GitHub</a>
       </div>
     </section>
 
-    <!-- Address block -->
-    <section class="section">
+    <section class="section reveal">
       <h2>Find us</h2>
-      <p class="lead">
-        University of Nottingham<br>
-        Sutton Bonington Campus<br>
-        Sutton Bonington<br>
-        Leicestershire<br>
-        LE12 5RD
-      </p>
+      <p class="lead">University of Nottingham<br>Sutton Bonington Campus<br>Sutton Bonington<br>Leicestershire<br>LE12 5RD</p>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <small>© 2025 The BioGreen Project</small>
+    <div class="container cols">
+      <div>
+        <strong>The BioGreen</strong>
+        <p class="lead">Built by students, for sustainability.</p>
+      </div>
+      <div>
+        <p>Contact us: <a href="mailto:uonbiogreenproject@gmail.com">uonbiogreenproject@gmail.com</a></p>
+        <p><a href="https://www.instagram.com/thebiogreenproject_uon" target="_blank">Instagram</a> • <a href="https://github.com/thebiogreenproject" target="_blank">GitHub</a></p>
+        <small>© 2025 The BioGreen</small>
+      </div>
     </div>
   </footer>
+
+  <script>const t=document.querySelector('.menu-toggle'),m=document.querySelector('.menu');t.addEventListener('click',()=>m.classList.toggle('open'));</script>
 </body>
 </html>
+</file>
