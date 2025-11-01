@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>News — The BioGreen</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <div class="brand">
+        <img src="images/logo.jpg" alt="BioGreen logo" />
+        <span class="brand-name">The BioGreen</span>
+      </div>
+      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li class="has-sub">
+          <button class="submenu-toggle">Projects ▾</button>
+          <ul class="submenu">
+            <li><a href="projects/brewery-waste.html">Brewery Waste → Greener Growth</a></li>
+            <li><a href="projects/plastic-reduction.html">Plastic Waste Reduction</a></li>
+          </ul>
+        </li>
+        <li><a class="active" href="news.html">News</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="partners.html">Global Partners</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero small" style="--hero-img: url('images/banner_news.jpg')">
+    <div class="container">
+      <h1>News</h1>
+      <p class="lead">Updates from the field, partner stories, and student reflections.</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <section class="section reveal" id="posts">
+      <h2>All Posts</h2>
+
+      <!-- 🔰 BEGINNER NOTE: How to add a news post
+           1) Copy one of the commented examples below.
+           2) Give it a unique id (like id="spent-grain").
+           3) Add a project tag comment above (PROJECT: Brewery Waste or Plastic Reduction).
+           4) Upload an image to /images and link it.
+      -->
+
+      <div class="card-grid">
+        <!-- No news posts yet — add cards here! -->
+      </div>
+      <p class="lead" style="text-align:center; margin:24px 0;">No news posts yet — check back soon.</p>
+
+      <!-- ===== Example posts to copy (keep commented) =====
+      <div class="card-grid">
+
+        <a class="card" id="spent-grain" href="#spent-grain">
+          <!-- PROJECT: Brewery Waste -->
+          <img src="images/blog_placeholder_01.jpg" alt="Spent grain results">
+          <h3>Spent Grain Field Data Released</h3>
+          <p class="lead">Early growth analysis of barley using brewery waste compost.</p>
+        </a>
+
+        <a class="card" id="plastic-audit" href="#plastic-audit">
+          <!-- PROJECT: Plastic Reduction -->
+          <img src="images/blog_placeholder_02.jpg" alt="Plastic audit kickoff">
+          <h3>Plastic Audit Kickoff</h3>
+          <p class="lead">Mapping where plastic enters lab workflows to design smarter reuse streams.</p>
+        </a>
+      </div>
+      =============================================== -->
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container cols">
+      <div>
+        <strong>The BioGreen</strong>
+        <p class="lead">Built by students, for sustainability.</p>
+      </div>
+      <div>
+        <p>Contact us: <a href="mailto:uonbiogreenproject@gmail.com">uonbiogreenproject@gmail.com</a></p>
+        <p><a href="https://www.instagram.com/thebiogreenproject_uon" target="_blank">Instagram</a> • <a href="https://github.com/thebiogreenproject" target="_blank">GitHub</a></p>
+        <small>© 2025 The BioGreen</small>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+    menuBtn.addEventListener('click', () => menu.classList.toggle('open'));
+    document.querySelectorAll('.submenu-toggle').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.currentTarget.closest('.has-sub').classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>
