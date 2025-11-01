@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — The BioGreen</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <div class="brand">
+        <img src="images/logo.jpg" alt="BioGreen logo" />
+        <span class="brand-name">The BioGreen</span>
+      </div>
+      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li class="has-sub">
+          <button class="submenu-toggle">Projects ▾</button>
+          <ul class="submenu">
+            <li><a href="projects/brewery-waste.html">Brewery Waste → Greener Growth</a></li>
+            <li><a href="projects/plastic-reduction.html">Plastic Waste Reduction</a></li>
+          </ul>
+        </li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="partners.html">Global Partners</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a class="active" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero small" style="--hero-img: url('images/banner_contact.jpg')">
+    <div class="container">
+      <h1>Contact</h1>
+      <p class="lead">We’d love to hear from you.</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <section class="section reveal">
+      <h2>Contact Us</h2>
+      <p>Prefer email? <a href="mailto:uonbiogreenproject@gmail.com">uonbiogreenproject@gmail.com</a></p>
+      <p class="lead">Or reach out on social:</p>
+      <div class="card-grid">
+        <a class="card" href="https://www.instagram.com/thebiogreenproject_uon" target="_blank" rel="noopener">Instagram</a>
+        <a class="card" href="https://github.com/thebiogreenproject" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2>Find Us</h2>
+      <p class="lead">
+        University of Nottingham<br>
+        Sutton Bonington Campus<br>
+        Sutton Bonington<br>
+        Leicestershire<br>
+        LE12 5RD
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container cols">
+      <div>
+        <strong>The BioGreen</strong>
+        <p class="lead">Built by students, for sustainability.</p>
+      </div>
+      <div>
+        <p>Contact us: <a href="mailto:uonbiogreenproject@gmail.com">uonbiogreenproject@gmail.com</a></p>
+        <p><a href="https://www.instagram.com/thebiogreenproject_uon" target="_blank">Instagram</a> • <a href="https://github.com/thebiogreenproject" target="_blank">GitHub</a></p>
+        <small>© 2025 The BioGreen</small>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+    menuBtn.addEventListener('click', () => menu.classList.toggle('open'));
+    document.querySelectorAll('.submenu-toggle').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.currentTarget.closest('.has-sub').classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>
