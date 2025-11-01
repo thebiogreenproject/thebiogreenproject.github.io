@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The BioGreen — Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <div class="brand">
+        <img src="images/logo.jpg" alt="BioGreen logo" />
+        <span class="brand-name">The BioGreen</span>
+      </div>
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <ul class="menu">
+        <li><a class="active" href="index.html">Home</a></li>
+        <li class="has-sub">
+          <button class="submenu-toggle" aria-haspopup="true" aria-expanded="false">Projects ▾</button>
+          <ul class="submenu">
+            <li><a href="projects/brewery-waste.html">Brewery Waste → Greener Growth</a></li>
+            <li><a href="projects/plastic-reduction.html">Plastic Waste Reduction</a></li>
+          </ul>
+        </li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="partners.html">Global Partners</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" style="--hero-img: url('images/banner_home.jpeg')">
+    <div class="container">
+      <span class="kicker">Welcome</span>
+      <h1>Together for a Greener Tomorrow</h1>
+      <p class="lead">Bla blah blah... sustainability, innovation, and collaboration to redefine green growth.</p>
+      <div class="actions">
+        <a class="btn" href="https://docs.google.com/forms/..." target="_blank" rel="noopener">Join the Movement</a>
+        <a class="btn" href="team.html">Meet the Team</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <section class="section" id="story">
+      <h2>Our Story</h2>
+      <p>Bla blah blah... we believe that science and community can work together to make sustainable change.</p>
+    </section>
+
+    <section class="section" id="mission">
+      <h2>Our Mission</h2>
+      <p>Our mission is to connect research, agriculture, and innovation to create sustainable cycles of growth.</p>
+      <h2>Our Vision</h2>
+      <p>Our vision is a student-powered, science-driven circular economy where local waste becomes local value — healthier soils, resilient crops, and communities learning by doing.</p>
+      <h2>Our Values</h2>
+      <ul>
+        <li>Innovation through collaboration</li>
+        <li>Science with community impact</li>
+        <li>Transparency, inclusion, and education</li>
+      </ul>
+    </section>
+
+    <section class="section" id="projects">
+      <h2>Featured Projects</h2>
+      <div class="card-grid">
+        <a class="card" href="projects/brewery-waste.html">
+          <img src="images/banner_brewery.jpg" alt="Brewery waste to greener growth">
+          <h3>We’re turning brewery waste into greener growth</h3>
+          <p class="lead">Our current, data-backed field project with brewers’ spent grain.</p>
+        </a>
+        <a class="card" href="projects/plastic-reduction.html">
+          <img src="images/banner_plastic.jpg" alt="Plastic waste reduction">
+          <h3>Plastic Waste Reduction</h3>
+          <p class="lead">Designing student-friendly reuse streams and partner pilots.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- 🔰 BEGINNER NOTE: Add 2 latest news cards here -->
+    <section class="section" id="latest-news">
+      <h2>Latest News</h2>
+      <div class="card-grid">
+        <!-- Example template (keep inside comments):
+        <a class="card" href="news.html#spent-grain">
+          <img src="images/blog_placeholder_01.jpg" alt="Spent grain trials">
+          <h3>Spent Grain Field Data Released</h3>
+          <p class="lead">Early growth analysis of barley using brewery waste compost.</p>
+        </a>
+        -->
+      </div>
+      <p class="lead" style="text-align:center;margin:24px 0;">No recent updates yet — stay tuned!</p>
+    </section>
+
+    <section class="section" id="newsletter">
+      <h2>Stay Connected</h2>
+      <p>Sign up for occasional updates from The BioGreen team.</p>
+      <form action="mailto:uonbiogreenproject@gmail.com" method="post" enctype="text/plain">
+        <input type="email" name="email" placeholder="Your email address" required>
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container cols">
+      <div>
+        <strong>The BioGreen</strong>
+        <p class="lead">Built by students, for sustainability.</p>
+      </div>
+      <div>
+        <p>Contact us: <a href="mailto:uonbiogreenproject@gmail.com">uonbiogreenproject@gmail.com</a></p>
+        <p><a href="https://www.instagram.com/thebiogreenproject_uon" target="_blank">Instagram</a> • <a href="https://github.com/thebiogreenproject" target="_blank">GitHub</a></p>
+        <small>© 2025 The BioGreen</small>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const menuBtn = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+    menuBtn.addEventListener('click', () => menu.classList.toggle('open'));
+
+    // Submenu toggle for projects
+    document.querySelectorAll('.submenu-toggle').forEach(btn => {
+      btn.addEventListener('click', e => {
+        const parent = e.currentTarget.closest('.has-sub');
+        parent.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>
