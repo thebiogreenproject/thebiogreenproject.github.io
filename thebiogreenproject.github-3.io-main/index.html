@@ -1,0 +1,116 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The BioGreen — Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <div class="brand">
+        <img src="images/logo.jpg" alt="BioGreen logo" />
+        <span class="brand-name">The BioGreen</span>
+      </div>
+      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <div class="menu">
+        <a class="active" href="index.html">Home</a>
+        <a href="projects/brewery-waste.html">Projects</a>
+        <a href="news.html">News</a>
+        <a href="community.html">Community</a>
+        <a href="partners.html">Global Partners</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero" style="--hero-img: url('images/hero_home.jpeg')">
+    <div class="container">
+      <span class="kicker">Welcome</span>
+      <h1>Together for a Greener Tomorrow</h1>
+      <p class="lead">Bla blah blah... sustainability, innovation, and collaboration to redefine green growth.</p>
+      <div class="actions">
+        <a class="btn" href="https://docs.google.com/forms/..." target="_blank">Join the Movement</a>
+        <a class="btn" href="team.html">Meet the Team</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <section class="section" id="story">
+      <h2>Our Story</h2>
+      <p>Bla blah blah... we believe that science and community can work together to make sustainable change.</p>
+    </section>
+
+    <section class="section" id="mission">
+      <h2>Our Mission</h2>
+      <p>Our mission is to connect research, agriculture, and innovation to create sustainable cycles of growth.</p>
+
+      <h2>Our Vision</h2>
+      <p>Our vision is a student‑powered, science‑driven circular economy where local waste becomes local value — healthier soils, resilient crops, and communities learning by doing.</p>
+
+      <h2>Our Values</h2>
+      <ul>
+        <li>Innovation through collaboration</li>
+        <li>Science with community impact</li>
+        <li>Transparency, inclusion, and education</li>
+      </ul>
+    </section>
+
+    <section class="section" id="news-preview">
+      <h2>Latest News</h2>
+      <div class="card-grid">
+        <a class="card" href="news.html">
+          <img src="images/blog_placeholder_01.jpg" alt="Project updates">
+          <h3>Spent Grain Trials Completed</h3>
+          <p class="lead">Our research findings from the 2025 growing season.</p>
+        </a>
+        <a class="card" href="news.html">
+          <img src="images/blog_placeholder_02.jpg" alt="Community initiatives">
+          <h3>Plastic Waste Reduction Initiative Launch</h3>
+          <p class="lead">Partnering with local communities to repurpose plastic waste.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="newsletter">
+      <h2>Stay Connected</h2>
+      <p>Sign up for occasional updates from The BioGreen team.</p>
+      <form action="mailto:uonbiogreenproject@gmail.com" method="post" enctype="text/plain">
+        <input type="email" name="email" placeholder="Your email address" required>
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+    </section>
+
+    <section class="section" id="join">
+      <div class="btn-center">
+        <a class="btn" href="https://docs.google.com/forms/..." target="_blank">Join the Movement</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container cols">
+      <div>
+        <strong>The BioGreen</strong>
+        <p class="lead">Built by students, for sustainability.</p>
+      </div>
+      <div>
+        <p>Contact us: <a href="mailto:uonbiogreenproject@gmail.com">uonbiogreenproject@gmail.com</a></p>
+        <p>
+          <a href="https://www.instagram.com/thebiogreenproject_uon" target="_blank">Instagram</a> •
+          <a href="https://github.com/thebiogreenproject" target="_blank">GitHub</a>
+        </p>
+        <small>© 2025 The BioGreen</small>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+    toggle.addEventListener('click', () => menu.classList.toggle('open'));
+  </script>
+</body>
+</html>
