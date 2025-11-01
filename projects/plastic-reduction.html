@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The BioGreen — Plastic Waste Reduction</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <div class="brand">
+        <img src="../images/logo.jpg" alt="BioGreen logo" />
+        <span class="brand-name">The BioGreen</span>
+      </div>
+      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <ul class="menu">
+        <li><a href="../index.html">Home</a></li>
+        <li class="has-sub">
+          <button class="submenu-toggle">Projects ▾</button>
+          <ul class="submenu">
+            <li><a href="brewery-waste.html">Brewery Waste → Greener Growth</a></li>
+            <li><a class="active" href="plastic-reduction.html">Plastic Waste Reduction</a></li>
+          </ul>
+        </li>
+        <li><a href="../news.html">News</a></li>
+        <li><a href="../community.html">Community</a></li>
+        <li><a href="../partners.html">Global Partners</a></li>
+        <li><a href="../team.html">Team</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero small" style="--hero-img: url('../images/banner_plastic.jpg')">
+    <div class="container">
+      <span class="kicker">Upcoming Project</span>
+      <h1>Plastic Waste Reduction</h1>
+      <p class="lead">Exploring student-friendly ways to reduce and repurpose plastic on campus and in our community.</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <section class="section reveal">
+      <h2>What We’re Planning</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Audit & Awareness</h3>
+          <p class="lead">Understand where plastic enters our workflows and how to reduce it.</p>
+        </div>
+        <div class="card">
+          <h3>Reuse Streams</h3>
+          <p class="lead">Design collection points to turn plastic into useful campus tools.</p>
+        </div>
+        <div class="card">
+          <h3>Partner Pilots</h3>
+          <p class="lead">Work with local makers to prototype small circular-economy products.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🔰 BEGINNER NOTE: Related News for this project
+         Add cards below linking to items in news.html using anchor IDs.
+         If none added, the 'No related news' line will stay visible.
+    -->
+    <section class="section reveal" id="related-news">
+      <h2>Related News</h2>
+      <div class="card-grid">
+        <!-- Example (keep inside comments):
+        <a class="card" href="../news.html#plastic-audit">
+          <img src="../images/blog_placeholder_02.jpg" alt="Plastic audit kickoff">
+          <h3>Plastic Audit Kickoff</h3>
+          <p class="lead">Mapping where plastic enters lab workflows to design smarter reuse streams.</p>
+        </a>
+        -->
+      </div>
+      <p class="lead" style="text-align:center; margin:24px 0;">No related news yet — check back soon.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container cols">
+      <div>
+        <strong>The BioGreen</strong>
+        <p class="lead">Built by students, for sustainability.</p>
+      </div>
+      <div>
+        <p>Contact us: <a href="mailto:uonbiogreenproject@gmail.com">uonbiogreenproject@gmail.com</a></p>
+        <p><a href="https://www.instagram.com/thebiogreenproject_uon" target="_blank">Instagram</a> • <a href="https://github.com/thebiogreenproject" target="_blank">GitHub</a></p>
+        <small>© 2025 The BioGreen</small>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+    menuBtn.addEventListener('click', () => menu.classList.toggle('open'));
+    document.querySelectorAll('.submenu-toggle').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.currentTarget.closest('.has-sub').classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>
