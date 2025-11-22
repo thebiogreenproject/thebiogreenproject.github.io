@@ -16,7 +16,13 @@
       <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-menu">☰</button>
       <div class="menu" id="main-menu">
         <a href="index.html">Home</a>
-        <a href="projects/brewery-waste.html">Projects</a>
+        <div class="dropdown">
+          <a class="dropdown-toggle">Projects</a>
+          <div class="dropdown-menu">
+            <a href="projects/brewery-waste.html">Brewery Waste</a>
+            <a href="projects/plastic-reduction.html">Plastic Reduction</a>
+          </div>
+        </div>
         <a href="news.html">News</a>
         <a class="active" href="community.html">Community</a>
         <a href="partners.html">Global Partners</a>
@@ -87,6 +93,9 @@
     document.addEventListener('DOMContentLoaded', function() {
       const toggle = document.querySelector('.menu-toggle');
       const menu = document.querySelector('.menu');
+      const dropdowns = document.querySelectorAll('.dropdown');
+      
+      // Mobile menu toggle
       if (toggle && menu) {
         toggle.addEventListener('click', () => {
           menu.classList.toggle('open');
@@ -94,6 +103,34 @@
           toggle.setAttribute('aria-expanded', menu.classList.contains('open'));
         });
       }
+      
+      // Dropdown functionality
+      dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        
+        // Desktop: hover to open
+        dropdown.addEventListener('mouseenter', () => {
+          if (window.innerWidth > 860) {
+            dropdown.classList.add('open');
+          }
+        });
+        
+        dropdown.addEventListener('mouseleave', () => {
+          if (window.innerWidth > 860) {
+            dropdown.classList.remove('open');
+          }
+        });
+        
+        // Mobile: click to toggle
+        if (toggle) {
+          toggle.addEventListener('click', (e) => {
+            if (window.innerWidth <= 860) {
+              e.preventDefault();
+              dropdown.classList.toggle('open');
+            }
+          });
+        }
+      });
       
       const io = new IntersectionObserver(es => {
         es.forEach(e => e.isIntersecting && e.target.classList.add('show'));
