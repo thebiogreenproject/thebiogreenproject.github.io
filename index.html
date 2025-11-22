@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -12,8 +13,8 @@
         <img src="images/logo.jpg" alt="BioGreen logo" />
         <span class="brand-name">The BioGreen</span>
       </div>
-      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
-      <div class="menu">
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-menu">☰</button>
+      <div class="menu" id="main-menu">
         <a class="active" href="index.html">Home</a>
         <a href="projects/brewery-waste.html">Projects</a>
         <a href="news.html">News</a>
@@ -31,7 +32,7 @@
       <h1>Together for a Greener Tomorrow</h1>
       <p class="lead">Bla blah blah... sustainability, innovation, and collaboration to redefine green growth.</p>
       <div class="actions">
-        <a class="btn" href="https://docs.google.com/forms/..." target="_blank">Join the Movement</a>
+        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfyrYPMFbpblwrjf735tpshw0kfAPxARhTBlcg-CUtjKqo_Og/viewform" target="_blank">Join the Movement</a>
         <a class="btn" href="team.html">Meet the Team</a>
       </div>
     </div>
@@ -77,7 +78,7 @@
     <section class="section" id="newsletter">
       <h2>Stay Connected</h2>
       <p>Sign up for occasional updates from The BioGreen team.</p>
-      <form action="mailto:uonbiogreenproject@gmail.com" method="post" enctype="text/plain">
+      <form action="mailto:thebiogreenproject@gmail.com" method="post" enctype="text/plain">
         <input type="email" name="email" placeholder="Your email address" required>
         <button type="submit" class="btn">Subscribe</button>
       </form>
@@ -85,7 +86,7 @@
 
     <section class="section" id="join">
       <div class="btn-center">
-        <a class="btn" href="https://docs.google.com/forms/..." target="_blank">Join the Movement</a>
+        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfyrYPMFbpblwrjf735tpshw0kfAPxARhTBlcg-CUtjKqo_Og/viewform" target="_blank">Join the Movement</a>
       </div>
     </section>
   </main>
@@ -97,7 +98,7 @@
         <p class="lead">Built by students, for sustainability.</p>
       </div>
       <div>
-        <p>Contact us: <a href="mailto:uonbiogreenproject@gmail.com">uonbiogreenproject@gmail.com</a></p>
+        <p>Contact us: <a href="mailto:thebiogreenproject@gmail.com">thebiogreenproject@gmail.com</a></p>
         <p>
           <a href="https://www.instagram.com/thebiogreenproject_uon" target="_blank">Instagram</a> •
           <a href="https://github.com/thebiogreenproject" target="_blank">GitHub</a>
@@ -108,9 +109,17 @@
   </footer>
 
   <script>
-    const toggle = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('.menu');
-    toggle.addEventListener('click', () => menu.classList.toggle('open'));
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggle = document.querySelector('.menu-toggle');
+      const menu = document.querySelector('.menu');
+      if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+          menu.classList.toggle('open');
+          toggle.textContent = menu.classList.contains('open') ? '✕' : '☰';
+          toggle.setAttribute('aria-expanded', menu.classList.contains('open'));
+        });
+      }
+    });
   </script>
 </body>
 </html>
