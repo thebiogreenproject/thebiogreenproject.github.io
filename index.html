@@ -16,7 +16,13 @@
       <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-menu">☰</button>
       <div class="menu" id="main-menu">
         <a class="active" href="index.html">Home</a>
-        <a href="projects/brewery-waste.html">Projects</a>
+        <div class="dropdown">
+          <a class="dropdown-toggle">Projects</a>
+          <div class="dropdown-menu">
+            <a href="projects/brewery-waste.html">Brewery Waste</a>
+            <a href="projects/plastic-reduction.html">Plastic Reduction</a>
+          </div>
+        </div>
         <a href="news.html">News</a>
         <a href="community.html">Community</a>
         <a href="partners.html">Global Partners</a>
@@ -61,27 +67,22 @@
 
     <section class="section" id="news-preview">
       <h2>Latest News</h2>
-      <div class="card-grid">
-        <a class="card" href="news.html">
-          <img src="images/blog_placeholder_01.jpg" alt="Project updates">
-          <h3>Spent Grain Trials Completed</h3>
-          <p class="lead">Our research findings from the 2025 growing season.</p>
-        </a>
-        <a class="card" href="news.html">
-          <img src="images/blog_placeholder_02.jpg" alt="Community initiatives">
-          <h3>Plastic Waste Reduction Initiative Launch</h3>
-          <p class="lead">Partnering with local communities to repurpose plastic waste.</p>
-        </a>
+      <div id="latest-news-container">
+        <!-- News will be loaded dynamically here -->
+        <div class="no-news">
+          <p class="lead">No news updates yet. Check back soon!</p>
+        </div>
       </div>
     </section>
 
     <section class="section" id="newsletter">
       <h2>Stay Connected</h2>
       <p>Sign up for occasional updates from The BioGreen team.</p>
-      <form action="mailto:thebiogreenproject@gmail.com" method="post" enctype="text/plain">
+      <form id="email-form" action="https://script.google.com/macros/s/YOUR_GOOGLE_APPS_SCRIPT_ID/exec" method="POST">
         <input type="email" name="email" placeholder="Your email address" required>
         <button type="submit" class="btn">Subscribe</button>
       </form>
+      <div id="form-message" style="display:none; margin-top:10px; padding:10px; border-radius:8px;"></div>
     </section>
 
     <section class="section" id="join">
@@ -109,9 +110,13 @@
   </footer>
 
   <script>
+    // Enhanced menu functionality with dropdown support
     document.addEventListener('DOMContentLoaded', function() {
       const toggle = document.querySelector('.menu-toggle');
       const menu = document.querySelector('.menu');
+      const dropdowns = document.querySelectorAll('.dropdown');
+      
+      // Mobile menu toggle
       if (toggle && menu) {
         toggle.addEventListener('click', () => {
           menu.classList.toggle('open');
@@ -119,7 +124,124 @@
           toggle.setAttribute('aria-expanded', menu.classList.contains('open'));
         });
       }
+      
+      // Dropdown functionality
+      dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        
+        // Desktop: hover to open
+        dropdown.addEventListener('mouseenter', () => {
+          if (window.innerWidth > 860) {
+            dropdown.classList.add('open');
+          }
+        });
+        
+        dropdown.addEventListener('mouseleave', () => {
+          if (window.innerWidth > 860) {
+            dropdown.classList.remove('open');
+          }
+        });
+        
+        // Mobile: click to toggle
+        if (toggle) {
+          toggle.addEventListener('click', (e) => {
+            if (window.innerWidth <= 860) {
+              e.preventDefault();
+              dropdown.classList.toggle('open');
+            }
+          });
+        }
+      });
+      
+      // Load latest news
+      loadLatestNews();
+      
+      // Handle email form submission
+      const emailForm = document.getElementById('email-form');
+      const formMessage = document.getElementById('form-message');
+      
+      if (emailForm) {
+        emailForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          const formData = new FormData(emailForm);
+          
+          fetch(emailForm.action, {
+            method: 'POST',
+            body: formData
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (data.result === 'success') {
+              formMessage.textContent = 'Thank you for subscribing!';
+              formMessage.style.backgroundColor = '#e9f8ee';
+              formMessage.style.color = '#0e7c3a';
+              formMessage.style.display = 'block';
+              emailForm.reset();
+            } else {
+              throw new Error(data.error);
+            }
+          })
+          .catch(error => {
+            formMessage.textContent = 'Sorry, there was an error. Please try again or email us directly.';
+            formMessage.style.backgroundColor = '#fef2f2';
+            formMessage.style.color = '#dc2626';
+            formMessage.style.display = 'block';
+            console.error('Error:', error);
+          });
+        });
+      }
     });
+    
+    // Function to load latest news from news.html
+    function loadLatestNews() {
+      fetch('news.html')
+        .then(response => response.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          const newsCards = doc.querySelectorAll('#news-content .card');
+          const container = document.getElementById('latest-news-container');
+          
+          if (newsCards.length > 0) {
+            container.innerHTML = '';
+            const cardGrid = document.createElement('div');
+            cardGrid.className = 'card-grid';
+            
+            // Show only the latest 2 news items
+            Array.from(newsCards).slice(0, 2).forEach(card => {
+              cardGrid.appendChild(card.cloneNode(true));
+            });
+            
+            // Add a link to view all news
+            const viewAllLink = document.createElement('div');
+            viewAllLink.style.textAlign = 'center';
+            viewAllLink.style.marginTop = '20px';
+            viewAllLink.innerHTML = '<a class="btn secondary" href="news.html">View All News</a>';
+            
+            container.appendChild(cardGrid);
+            container.appendChild(viewAllLink);
+          } else {
+            // No news available
+            container.innerHTML = `
+              <div class="no-news">
+                <p class="lead">No news updates yet. Check back soon!</p>
+                <a class="btn secondary" href="news.html">Visit News Page</a>
+              </div>
+            `;
+          }
+        })
+        .catch(error => {
+          console.error('Error loading news:', error);
+          const container = document.getElementById('latest-news-container');
+          container.innerHTML = `
+            <div class="no-news">
+              <p class="lead">Unable to load news. Please visit our news page.</p>
+              <a class="btn secondary" href="news.html">Visit News Page</a>
+            </div>
+          `;
+        });
+    }
   </script>
 </body>
 </html>
