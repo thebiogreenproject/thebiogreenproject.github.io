@@ -90,4 +90,16 @@
       if (toggle && menu) {
         toggle.addEventListener('click', () => {
           menu.classList.toggle('open');
-          toggle.text
+          toggle.textContent = menu.classList.contains('open') ? '✕' : '☰';
+          toggle.setAttribute('aria-expanded', menu.classList.contains('open'));
+        });
+      }
+      
+      const io = new IntersectionObserver(es => {
+        es.forEach(e => e.isIntersecting && e.target.classList.add('show'));
+      }, {threshold: .12});
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    });
+  </script>
+</body>
+</html>
