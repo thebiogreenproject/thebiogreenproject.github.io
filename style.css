@@ -25,18 +25,30 @@ a:hover{opacity:.9}
 .brand{display:flex;align-items:center;gap:12px}
 .brand img{width:36px;height:36px;border-radius:8px;border:1px solid #e5e7eb}
 .brand-name{font-weight:700;letter-spacing:.2px}
-.menu{display:flex;flex-wrap:wrap;gap:12px}
+.menu{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .menu a{padding:8px 12px;border-radius:10px;color:var(--ink);border:1px solid transparent}
 .menu a.active,.menu a:focus{border-color:var(--ring);box-shadow:0 0 0 4px var(--ring)}
 .menu a:hover{background:#f1f5f2}
+
+/* Dropdown Menu */
+.dropdown{position:relative}
+.dropdown-toggle{cursor:pointer;display:flex;align-items:center;gap:4px}
+.dropdown-toggle::after{content:"▼";font-size:10px;transition:transform 0.2s}
+.dropdown.open .dropdown-toggle::after{transform:rotate(180deg)}
+.dropdown-menu{position:absolute;top:100%;left:0;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:8px 0;min-width:180px;box-shadow:0 4px 12px rgba(0,0,0,.1);display:none;z-index:100}
+.dropdown.open .dropdown-menu{display:block}
+.dropdown-menu a{display:block;padding:8px 16px;border-radius:0;border:none;white-space:nowrap}
+.dropdown-menu a:hover{background:#f1f5f2}
 
 /* Mobile burger */
 .menu-toggle{display:none;background:transparent;border:0;font-size:22px;line-height:1;padding:8px 10px;border-radius:8px}
 .menu-toggle:focus{outline:2px solid var(--accent);}
 @media(max-width:860px){
   .menu-toggle{display:inline-block}
-  .menu{position:absolute;top:60px;right:16px;left:16px;flex-direction:column;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:12px;display:none}
+  .menu{position:absolute;top:60px;right:16px;left:16px;flex-direction:column;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:12px;display:none;z-index:100}
   .menu.open{display:flex}
+  .dropdown-menu{position:static;box-shadow:none;border:none;display:none}
+  .dropdown.open .dropdown-menu{display:block}
 }
 
 /* Buttons */
@@ -135,3 +147,6 @@ input[type=email]{
 /* Optional legacy gallery */
 .gallery-grid{columns:320px;column-gap:14px}
 .gallery-grid img{width:100%;height:300px;object-fit:cover;margin:0 0 14px;border-radius:12px;border:1px solid #e5e7eb}
+
+/* No news message */
+.no-news{text-align:center;padding:40px 0;color:var(--muted)}
