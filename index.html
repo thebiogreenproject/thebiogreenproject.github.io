@@ -36,7 +36,7 @@
     <div class="container">
       <span class="kicker">Welcome</span>
       <h1>Together for a Greener Tomorrow</h1>
-      <p class="lead">Bla blah blah... sustainability, innovation, and collaboration to redefine green growth.</p>
+      <p class="lead">Sustainability, innovation, and collaboration to redefine green growth.</p>
       <div class="actions">
         <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfyrYPMFbpblwrjf735tpshw0kfAPxARhTBlcg-CUtjKqo_Og/viewform" target="_blank">Join the Movement</a>
         <a class="btn" href="team.html">Meet the Team</a>
@@ -47,7 +47,7 @@
   <main class="container">
     <section class="section" id="story">
       <h2>Our Story</h2>
-      <p>Bla blah blah... we believe that science and community can work together to make sustainable change.</p>
+      <p>We believe that science and community can work together to make sustainable change. BioGreen started as a student-led initiative at the University of Nottingham, exploring how waste from one industry could become valuable resources for another.</p>
     </section>
 
     <section class="section" id="mission">
@@ -166,6 +166,12 @@
           
           const formData = new FormData(emailForm);
           
+          // Show loading state
+          const submitBtn = emailForm.querySelector('button[type="submit"]');
+          const originalText = submitBtn.textContent;
+          submitBtn.textContent = 'Subscribing...';
+          submitBtn.disabled = true;
+          
           fetch(emailForm.action, {
             method: 'POST',
             body: formData
@@ -188,6 +194,10 @@
             formMessage.style.color = '#dc2626';
             formMessage.style.display = 'block';
             console.error('Error:', error);
+          })
+          .finally(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
           });
         });
       }
@@ -221,25 +231,11 @@
             
             container.appendChild(cardGrid);
             container.appendChild(viewAllLink);
-          } else {
-            // No news available
-            container.innerHTML = `
-              <div class="no-news">
-                <p class="lead">No news updates yet. Check back soon!</p>
-                <a class="btn secondary" href="news.html">Visit News Page</a>
-              </div>
-            `;
           }
+          // If no news, the default "no news" message remains
         })
         .catch(error => {
           console.error('Error loading news:', error);
-          const container = document.getElementById('latest-news-container');
-          container.innerHTML = `
-            <div class="no-news">
-              <p class="lead">Unable to load news. Please visit our news page.</p>
-              <a class="btn secondary" href="news.html">Visit News Page</a>
-            </div>
-          `;
         });
     }
   </script>
