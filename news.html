@@ -16,7 +16,13 @@
       <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-menu">☰</button>
       <div class="menu" id="main-menu">
         <a href="index.html">Home</a>
-        <a href="projects/brewery-waste.html">Projects</a>
+        <div class="dropdown">
+          <a class="dropdown-toggle">Projects</a>
+          <div class="dropdown-menu">
+            <a href="projects/brewery-waste.html">Brewery Waste</a>
+            <a href="projects/plastic-reduction.html">Plastic Reduction</a>
+          </div>
+        </div>
         <a class="active" href="news.html">News</a>
         <a href="community.html">Community</a>
         <a href="partners.html">Global Partners</a>
@@ -40,19 +46,39 @@
   <div class="side-decor right"><img src="images/side_leaf_right.png" alt="decorative"></div>
 
   <main class="container">
-    <section class="section reveal">
+    <section class="section reveal" id="news-content">
       <h2>Latest Posts</h2>
-      <p class="lead" style="text-align:center; margin:40px 0;">No news posts yet — check back soon.</p>
-      <!-- BEGINNER NOTE: Copy one of these cards and update the text/image -->
-      <!--
+      
+      <!-- BEGINNER NOTE: Copy one of these cards and update the text/image to add news -->
+      <!-- When you add news here, it will automatically appear on the home page -->
+      
       <div class="card-grid">
+        <!-- Example news post 1 -->
+        <!--
         <a class="card" href="#">
           <img src="images/blog_placeholder_01.jpg" alt="Spent grain at the allotment" />
           <h3>First Planting Day: What Worked, What Didn't</h3>
           <p class="lead">Notes from our broad bean trials and soil prep tips from volunteers.</p>
+          <small>Posted on: March 15, 2025</small>
         </a>
+        -->
+        
+        <!-- Example news post 2 -->
+        <!--
+        <a class="card" href="#">
+          <img src="images/blog_placeholder_02.jpg" alt="Team meeting" />
+          <h3>New Team Members Join BioGreen</h3>
+          <p class="lead">Welcome our new team members and learn about their roles.</p>
+          <small>Posted on: February 28, 2025</small>
+        </a>
+        -->
       </div>
-      -->
+      
+      <!-- No news message (shown when there are no news posts) -->
+      <div class="no-news">
+        <p class="lead">No news posts yet — check back soon.</p>
+        <p>Want to contribute? <a href="mailto:thebiogreenproject@gmail.com">Pitch a story idea</a>.</p>
+      </div>
     </section>
   </main>
 
@@ -74,6 +100,9 @@
     document.addEventListener('DOMContentLoaded', function() {
       const toggle = document.querySelector('.menu-toggle');
       const menu = document.querySelector('.menu');
+      const dropdowns = document.querySelectorAll('.dropdown');
+      
+      // Mobile menu toggle
       if (toggle && menu) {
         toggle.addEventListener('click', () => {
           menu.classList.toggle('open');
@@ -82,10 +111,46 @@
         });
       }
       
+      // Dropdown functionality
+      dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        
+        // Desktop: hover to open
+        dropdown.addEventListener('mouseenter', () => {
+          if (window.innerWidth > 860) {
+            dropdown.classList.add('open');
+          }
+        });
+        
+        dropdown.addEventListener('mouseleave', () => {
+          if (window.innerWidth > 860) {
+            dropdown.classList.remove('open');
+          }
+        });
+        
+        // Mobile: click to toggle
+        if (toggle) {
+          toggle.addEventListener('click', (e) => {
+            if (window.innerWidth <= 860) {
+              e.preventDefault();
+              dropdown.classList.toggle('open');
+            }
+          });
+        }
+      });
+      
       const io = new IntersectionObserver(es => {
         es.forEach(e => e.isIntersecting && e.target.classList.add('show'));
       }, {threshold: .12});
       document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+      
+      // Hide "no news" message if there are news cards
+      const newsCards = document.querySelectorAll('#news-content .card');
+      const noNewsMessage = document.querySelector('#news-content .no-news');
+      
+      if (newsCards.length > 0 && noNewsMessage) {
+        noNewsMessage.style.display = 'none';
+      }
     });
   </script>
 </body>
