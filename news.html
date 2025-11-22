@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -12,8 +13,8 @@
         <img src="images/logo.jpg" alt="Biogreen logo" />
         <span class="brand-name">The BioGreen</span>
       </div>
-      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
-      <div class="menu">
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-menu">☰</button>
+      <div class="menu" id="main-menu">
         <a href="index.html">Home</a>
         <a href="projects/brewery-waste.html">Projects</a>
         <a class="active" href="news.html">News</a>
@@ -30,7 +31,7 @@
       <h1 class="banner-title">News</h1>
       <p class="lead">Updates from the field, partner stories, and student reflections.</p>
       <div class="actions" style="margin-top:14px">
-        <a class="btn" href="mailto:uonbiogreenproject@gmail.com">Pitch a Story</a>
+        <a class="btn" href="mailto:thebiogreenproject@gmail.com">Pitch a Story</a>
       </div>
     </div>
   </section>
@@ -47,7 +48,7 @@
       <div class="card-grid">
         <a class="card" href="#">
           <img src="images/blog_placeholder_01.jpg" alt="Spent grain at the allotment" />
-          <h3>First Planting Day: What Worked, What Didn’t</h3>
+          <h3>First Planting Day: What Worked, What Didn't</h3>
           <p class="lead">Notes from our broad bean trials and soil prep tips from volunteers.</p>
         </a>
       </div>
@@ -62,15 +63,30 @@
         <p class="lead">Built by students, for sustainability.</p>
       </div>
       <div>
-        <p>Contact us: <a href="mailto:uonbiogreenproject@gmail.com">uonbiogreenproject@gmail.com</a></p>
+        <p>Contact us: <a href="mailto:thebiogreenproject@gmail.com">thebiogreenproject@gmail.com</a></p>
         <p><a href="https://www.instagram.com/thebiogreenproject_uon" target="_blank">Instagram</a> • <a href="https://github.com/thebiogreenproject" target="_blank">GitHub</a></p>
         <small>© 2025 The BioGreen</small>
       </div>
     </div>
   </footer>
 
-  <script>const t=document.querySelector('.menu-toggle'),m=document.querySelector('.menu');t.addEventListener('click',()=>m.classList.toggle('open'));
-  const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('show')),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggle = document.querySelector('.menu-toggle');
+      const menu = document.querySelector('.menu');
+      if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+          menu.classList.toggle('open');
+          toggle.textContent = menu.classList.contains('open') ? '✕' : '☰';
+          toggle.setAttribute('aria-expanded', menu.classList.contains('open'));
+        });
+      }
+      
+      const io = new IntersectionObserver(es => {
+        es.forEach(e => e.isIntersecting && e.target.classList.add('show'));
+      }, {threshold: .12});
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    });
+  </script>
 </body>
 </html>
-</file>
