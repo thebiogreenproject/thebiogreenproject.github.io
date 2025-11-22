@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -12,8 +13,8 @@
         <img src="../images/logo.jpg" alt="BioGreen logo" />
         <span class="brand-name">The BioGreen</span>
       </div>
-      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
-      <div class="menu">
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-menu">☰</button>
+      <div class="menu" id="main-menu">
         <a href="../index.html">Home</a>
         <a class="active" href="./plastic-reduction.html">Projects</a>
         <a href="../news.html">News</a>
@@ -35,7 +36,7 @@
 
   <main class="container">
     <section class="section reveal">
-      <h2>What We’re Planning</h2>
+      <h2>What We're Planning</h2>
       <div class="card-grid">
         <div class="card"><h3>Audit & Awareness</h3><p class="lead">Understand where plastic enters our workflows and how to reduce it.</p></div>
         <div class="card"><h3>Reuse Streams</h3><p class="lead">Design collection points to turn plastic into useful campus tools.</p></div>
@@ -46,7 +47,7 @@
     <section class="section reveal">
       <h2>Get Involved</h2>
       <p class="lead">Students and partners welcome. Join our mailing list on the Home page or reach out anytime.</p>
-      <div class="btn-row"><a class="btn" href="https://docs.google.com/forms/..." target="_blank">Register Interest</a></div>
+      <div class="btn-row"><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfyrYPMFbpblwrjf735tpshw0kfAPxARhTBlcg-CUtjKqo_Og/viewform" target="_blank">Register Interest</a></div>
     </section>
   </main>
 
@@ -57,15 +58,30 @@
         <p class="lead">Built by students, for sustainability.</p>
       </div>
       <div>
-        <p>Contact us: <a href="mailto:uonbiogreenproject@gmail.com">uonbiogreenproject@gmail.com</a></p>
+        <p>Contact us: <a href="mailto:thebiogreenproject@gmail.com">thebiogreenproject@gmail.com</a></p>
         <p><a href="https://www.instagram.com/thebiogreenproject_uon" target="_blank">Instagram</a> • <a href="https://github.com/thebiogreenproject" target="_blank">GitHub</a></p>
         <small>© 2025 The BioGreen</small>
       </div>
     </div>
   </footer>
 
-  <script>const t=document.querySelector('.menu-toggle'),m=document.querySelector('.menu');t.addEventListener('click',()=>m.classList.toggle('open'));
-  const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('show')),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggle = document.querySelector('.menu-toggle');
+      const menu = document.querySelector('.menu');
+      if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+          menu.classList.toggle('open');
+          toggle.textContent = menu.classList.contains('open') ? '✕' : '☰';
+          toggle.setAttribute('aria-expanded', menu.classList.contains('open'));
+        });
+      }
+      
+      const io = new IntersectionObserver(es => {
+        es.forEach(e => e.isIntersecting && e.target.classList.add('show'));
+      }, {threshold: .12});
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    });
+  </script>
 </body>
 </html>
-</file>
