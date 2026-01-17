@@ -21,14 +21,36 @@ a:hover{opacity:.9}
 
 /* Header & Nav */
 .header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid #e5e7eb;backdrop-filter:blur(6px)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 24px}
-.brand{display:flex;align-items:center;gap:12px}
-.brand img{width:36px;height:36px;border-radius:8px;border:1px solid #e5e7eb}
-.brand-name{font-weight:700;letter-spacing:.2px}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 18px}
+.brand img{
+  height:56px;          /* bigger logo */
+  width:auto;
+  border-radius:0;      /* Amazon-like: no rounded logo container */
+  border:none;          /* remove the little border box */
+  display:block;
+  object-fit:contain;
+}
 .menu{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .menu a{padding:8px 12px;border-radius:10px;color:var(--ink);border:1px solid transparent}
 .menu a.active,.menu a:focus{border-color:var(--ring);box-shadow:0 0 0 4px var(--ring)}
 .menu a:hover{background:#f1f5f2}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:0;               /* no gap because no text */
+}
+
+.brand a{
+  display:flex;
+  align-items:center;
+  padding:2px 4px;     /* small click padding like big sites */
+  border-radius:10px;
+}
+.brand a:hover{
+  background:#f1f5f2;  /* matches your existing hover style */
+}
+
 
 /* Dropdown Menu */
 .dropdown{position:relative}
@@ -44,6 +66,7 @@ a:hover{opacity:.9}
 .menu-toggle{display:none;background:transparent;border:0;font-size:22px;line-height:1;padding:8px 10px;border-radius:8px}
 .menu-toggle:focus{outline:2px solid var(--accent);}
 @media(max-width:860px){
+  .brand img{height:44px;}
   .menu-toggle{display:inline-block}
   .menu{position:absolute;top:60px;right:16px;left:16px;flex-direction:column;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:12px;display:none;z-index:100}
   .menu.open{display:flex}
