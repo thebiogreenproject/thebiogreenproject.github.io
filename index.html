@@ -65,40 +65,43 @@
     </section>
 
     <section class="section reveal" id="news">
-      <h2>Latest Posts</h2>
+      <h2>Latest Updates</h2>
 
       <!-- BEGINNER NOTE: Copy one of these cards and update the text/image to add news -->
-      <!-- When you add news here, it will automatically appear on the home page -->
+      <!-- News posts will appear here -->
 
-      <div class="card-grid">
-        <!-- Example news post 1 -->
+      <div class="card-grid" id="news-grid">
+        <!-- News cards will be added here dynamically -->
+        
+        <!-- Example news post 1 (Uncomment and edit to add news) -->
         <!--
-        <a class="card" href="#">
+        <div class="card news-card">
           <img src="images/blog_placeholder_01.jpg" alt="Spent grain at the allotment" />
           <h3>First Planting Day: What Worked, What Didn't</h3>
           <p class="lead">Notes from our broad bean trials and soil prep tips from volunteers.</p>
           <small>Posted on: March 15, 2025</small>
-        </a>
+        </div>
         -->
 
         <!-- Example news post 2 -->
         <!--
-        <a class="card" href="#">
+        <div class="card news-card">
           <img src="images/blog_placeholder_02.jpg" alt="Team meeting" />
           <h3>New Team Members Join BioGreen</h3>
           <p class="lead">Welcome our new team members and learn about their roles.</p>
           <small>Posted on: February 28, 2025</small>
-        </a>
+        </div>
         -->
       </div>
 
       <!-- No news message (shown when there are no news posts) -->
-      <div class="no-news">
+      <div id="no-news-message" class="no-news">
         <p class="lead">No news posts yet — check back soon.</p>
+        <p>Want to share an update? <a href="mailto:thebiogreenproject@gmail.com">Email us</a>.</p>
       </div>
     </section>
 
-<section class="section" id="newsletter">
+    <section class="section" id="newsletter">
       <h2>Stay Connected</h2>
       <p>Sign up for occasional updates from The BioGreen team.</p>
       <form id="email-form" action="https://script.google.com/macros/s/AKfycbx09ptrhwNos4jY00GO9pOzypgyk5Ovy_Yh0mus6G9JSiFmkeSFGYJ_e9o1cbjlWcKi/exec" method="POST">
@@ -133,92 +136,136 @@
   </footer>
 
   <script>
-  // Enhanced menu functionality with dropdown support
-  document.addEventListener('DOMContentLoaded', function () {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('.menu');
-    const dropdowns = document.querySelectorAll('.dropdown');
+    // Enhanced menu functionality with dropdown support
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const menu = document.querySelector('.menu');
+      const dropdowns = document.querySelectorAll('.dropdown');
 
-    // Mobile menu toggle
-    if (menuToggle && menu) {
-      menuToggle.addEventListener('click', () => {
-        menu.classList.toggle('open');
-        menuToggle.textContent = menu.classList.contains('open') ? '✕' : '☰';
-        menuToggle.setAttribute('aria-expanded', menu.classList.contains('open'));
-      });
-    }
-
-    // Dropdown functionality
-    dropdowns.forEach((dropdown) => {
-      const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
-
-      // Desktop: hover to open
-      dropdown.addEventListener('mouseenter', () => {
-        if (window.innerWidth > 860) dropdown.classList.add('open');
-      });
-
-      dropdown.addEventListener('mouseleave', () => {
-        if (window.innerWidth > 860) dropdown.classList.remove('open');
-      });
-
-      // Mobile: click to toggle
-      if (dropdownToggle) {
-        dropdownToggle.addEventListener('click', (e) => {
-          if (window.innerWidth <= 860) {
-            e.preventDefault();
-            dropdown.classList.toggle('open');
-          }
+      // Mobile menu toggle
+      if (menuToggle && menu) {
+        menuToggle.addEventListener('click', () => {
+          menu.classList.toggle('open');
+          menuToggle.textContent = menu.classList.contains('open') ? '✕' : '☰';
+          menuToggle.setAttribute('aria-expanded', menu.classList.contains('open'));
         });
       }
+
+      // Dropdown functionality
+      dropdowns.forEach((dropdown) => {
+        const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
+
+        // Desktop: hover to open
+        dropdown.addEventListener('mouseenter', () => {
+          if (window.innerWidth > 860) dropdown.classList.add('open');
+        });
+
+        dropdown.addEventListener('mouseleave', () => {
+          if (window.innerWidth > 860) dropdown.classList.remove('open');
+        });
+
+        // Mobile: click to toggle
+        if (dropdownToggle) {
+          dropdownToggle.addEventListener('click', (e) => {
+            if (window.innerWidth <= 860) {
+              e.preventDefault();
+              dropdown.classList.toggle('open');
+            }
+          });
+        }
+      });
+
+      // Handle email form submission
+      const emailForm = document.getElementById('email-form');
+      const formMessage = document.getElementById('form-message');
+
+      if (emailForm) {
+        emailForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          const formData = new FormData(emailForm);
+
+          // Show loading state
+          const submitBtn = emailForm.querySelector('button[type="submit"]');
+          const originalText = submitBtn.textContent;
+          submitBtn.textContent = 'Subscribing...';
+          submitBtn.disabled = true;
+
+          fetch(emailForm.action, {
+            method: 'POST',
+            body: formData,
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.result === 'success') {
+                formMessage.textContent = 'Thank you for subscribing!';
+                formMessage.style.backgroundColor = '#e9f8ee';
+                formMessage.style.color = '#0e7c3a';
+                formMessage.style.display = 'block';
+                emailForm.reset();
+              } else {
+                throw new Error(data.error || 'Unknown error');
+              }
+            })
+            .catch((error) => {
+              formMessage.textContent =
+                'Sorry, there was an error. Please try again or email us directly.';
+              formMessage.style.backgroundColor = '#fef2f2';
+              formMessage.style.color = '#dc2626';
+              formMessage.style.display = 'block';
+              console.error('Error:', error);
+            })
+            .finally(() => {
+              submitBtn.textContent = originalText;
+              submitBtn.disabled = false;
+            });
+        });
+      }
+
+      // Setup reveal animations
+      setupRevealAnimations();
+      
+      // Check for news posts and hide "no news" message if posts exist
+      checkForNewsPosts();
     });
 
-    // Handle email form submission
-    const emailForm = document.getElementById('email-form');
-    const formMessage = document.getElementById('form-message');
-
-    if (emailForm) {
-      emailForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const formData = new FormData(emailForm);
-
-        // Show loading state
-        const submitBtn = emailForm.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Subscribing...';
-        submitBtn.disabled = true;
-
-        fetch(emailForm.action, {
-          method: 'POST',
-          body: formData,
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            if (data.result === 'success') {
-              formMessage.textContent = 'Thank you for subscribing!';
-              formMessage.style.backgroundColor = '#e9f8ee';
-              formMessage.style.color = '#0e7c3a';
-              formMessage.style.display = 'block';
-              emailForm.reset();
-            } else {
-              throw new Error(data.error || 'Unknown error');
+    // Function to setup scroll reveal animations
+    function setupRevealAnimations() {
+      const reveals = document.querySelectorAll('.reveal');
+      
+      if (reveals.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('show');
             }
-          })
-          .catch((error) => {
-            formMessage.textContent =
-              'Sorry, there was an error. Please try again or email us directly.';
-            formMessage.style.backgroundColor = '#fef2f2';
-            formMessage.style.color = '#dc2626';
-            formMessage.style.display = 'block';
-            console.error('Error:', error);
-          })
-          .finally(() => {
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
           });
-      });
+        }, {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        });
+
+        reveals.forEach(el => observer.observe(el));
+      }
     }
-  });
-</script>
+
+    // Function to check for news posts and hide "no news" message
+    function checkForNewsPosts() {
+      const newsCards = document.querySelectorAll('.news-card');
+      const noNewsMessage = document.getElementById('no-news-message');
+      const newsGrid = document.getElementById('news-grid');
+      
+      // Count actual visible news cards (not commented ones)
+      const visibleNewsCards = Array.from(newsGrid.children).filter(card => 
+        !card.classList.contains('news-card') && card.tagName !== 'SCRIPT'
+      ).length;
+      
+      if (visibleNewsCards > 0 && noNewsMessage) {
+        noNewsMessage.style.display = 'none';
+      } else if (noNewsMessage) {
+        noNewsMessage.style.display = 'block';
+      }
+    }
+  </script>
 </body>
 </html>
