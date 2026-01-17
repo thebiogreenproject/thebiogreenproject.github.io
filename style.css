@@ -138,6 +138,53 @@ a:hover{opacity:.9}
 .members-divider{width:70%;border:0;border-top:2px solid #16a34a}
 .btn-row{display:flex;justify-content:center;align-items:center;gap:18px}
 
+/* Past Team Toggle (Cohorts) */
+details.cohort {
+  margin-top: 16px;
+}
+
+details.cohort summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 2px solid var(--accent);
+  background: linear-gradient(135deg, #e9f8ee, #f3f0eb);
+  font-weight: 700;
+  color: var(--accent-2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.25s ease;
+}
+
+/* Remove default arrow */
+details.cohort summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Hover = playful but professional */
+details.cohort summary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+}
+
+/* Arrow indicator */
+details.cohort summary::after {
+  content: "▸";
+  font-size: 18px;
+  transition: transform 0.25s ease;
+}
+
+/* Open state */
+details.cohort[open] summary {
+  background: linear-gradient(135deg, #d4f0db, #f3f0eb);
+}
+
+details.cohort[open] summary::after {
+  transform: rotate(90deg);
+}
+
 /* Newsletter inputs */
 form {
   display: flex;
