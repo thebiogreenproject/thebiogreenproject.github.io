@@ -23,6 +23,8 @@
             <a href="projects/plastic-reduction.html">Plastic Reduction</a>
           </div>
         </div>
+        <!-- Optional: if you want a nav item that jumps to the updates section -->
+        <!-- <a href="#news">Updates</a> -->
         <a href="community.html">Community</a>
         <a href="partners.html">Global Partners</a>
         <a href="team.html">Team</a>
@@ -36,7 +38,7 @@
       <h1>Together for a Greener Tomorrow</h1>
       <p class="lead">Sustainability, innovation, and collaboration to redefine green growth.</p>
       <div class="actions">
-        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfyrYPMFbpblwrjf735tpshw0kfAPxARhTBlcg-CUtjKqo_Og/viewform" target="_blank">Join the Movement</a>
+        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfyrYPMFbpblwrjf735tpshw0kfAPxARhTBlcg-CUtjKqo_Og/viewform" target="_blank" rel="noopener">Join the Movement</a>
         <a class="btn" href="team.html">Meet the Team</a>
       </div>
     </div>
@@ -53,7 +55,7 @@
       <p>Our mission is to connect research, agriculture, and innovation to create sustainable cycles of growth.</p>
 
       <h2>Our Vision</h2>
-      <p>Our vision is a student‑powered, science‑driven circular economy where local waste becomes local value — healthier soils, resilient crops, and communities learning by doing.</p>
+      <p>Our vision is a student-powered, science-driven circular economy where local waste becomes local value — healthier soils, resilient crops, and communities learning by doing.</p>
 
       <h2>Our Values</h2>
       <ul>
@@ -66,34 +68,43 @@
     <section class="section reveal" id="news">
       <h2>Latest Updates</h2>
 
-      <!-- BEGINNER NOTE: Copy one of these cards and update the text/image to add news -->
-      <!-- News posts will appear here -->
+      <!--
+        HOW TO ADD A BLOG/NEWS POST (PDF):
+        1) Put your PDF in: /posts/your-post-name.pdf
+        2) Copy a card below and update href/title/text/date/image
+        Cards open PDFs in a new tab.
+      -->
 
       <div class="card-grid" id="news-grid">
-        <!-- News cards will be added here dynamically -->
-        
-        <!-- Example news post 1 (Uncomment and edit to add news) -->
+
+        <!-- Example post 1 (Uncomment and edit) -->
         <!--
-        <div class="card news-card">
+        <a class="card news-card"
+           href="posts/first-planting-day.pdf"
+           target="_blank"
+           rel="noopener">
           <img src="images/blog_placeholder_01.jpg" alt="Spent grain at the allotment" />
           <h3>First Planting Day: What Worked, What Didn't</h3>
           <p class="lead">Notes from our broad bean trials and soil prep tips from volunteers.</p>
           <small>Posted on: March 15, 2025</small>
-        </div>
+        </a>
         -->
 
-        <!-- Example news post 2 -->
+        <!-- Example post 2 (Uncomment and edit) -->
         <!--
-        <div class="card news-card">
+        <a class="card news-card"
+           href="posts/new-team-members.pdf"
+           target="_blank"
+           rel="noopener">
           <img src="images/blog_placeholder_02.jpg" alt="Team meeting" />
           <h3>New Team Members Join BioGreen</h3>
           <p class="lead">Welcome our new team members and learn about their roles.</p>
           <small>Posted on: February 28, 2025</small>
-        </div>
+        </a>
         -->
+
       </div>
 
-      <!-- No news message (shown when there are no news posts) -->
       <div id="no-news-message" class="no-news">
         <p class="lead">No news posts yet — check back soon.</p>
         <p>Want to share an update? <a href="mailto:thebiogreenproject@gmail.com">Email us</a>.</p>
@@ -112,7 +123,7 @@
 
     <section class="section" id="join">
       <div class="btn-center">
-        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfyrYPMFbpblwrjf735tpshw0kfAPxARhTBlcg-CUtjKqo_Og/viewform" target="_blank">Join the Movement</a>
+        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfyrYPMFbpblwrjf735tpshw0kfAPxARhTBlcg-CUtjKqo_Og/viewform" target="_blank" rel="noopener">Join the Movement</a>
       </div>
     </section>
   </main>
@@ -126,8 +137,8 @@
       <div>
         <p>Contact us: <a href="mailto:thebiogreenproject@gmail.com">thebiogreenproject@gmail.com</a></p>
         <p>
-          <a href="https://www.instagram.com/thebiogreenproject_uon" target="_blank">Instagram</a> •
-          <a href="https://github.com/thebiogreenproject" target="_blank">GitHub</a>
+          <a href="https://www.instagram.com/thebiogreenproject_uon" target="_blank" rel="noopener">Instagram</a> •
+          <a href="https://github.com/thebiogreenproject" target="_blank" rel="noopener">GitHub</a>
         </p>
         <small>© 2025 The BioGreen</small>
       </div>
@@ -135,7 +146,6 @@
   </footer>
 
   <script>
-    // Enhanced menu functionality with dropdown support
     document.addEventListener('DOMContentLoaded', function () {
       const menuToggle = document.querySelector('.menu-toggle');
       const menu = document.querySelector('.menu');
@@ -174,7 +184,7 @@
         }
       });
 
-      // Handle email form submission
+      // Email form submission
       const emailForm = document.getElementById('email-form');
       const formMessage = document.getElementById('form-message');
 
@@ -184,7 +194,6 @@
 
           const formData = new FormData(emailForm);
 
-          // Show loading state
           const submitBtn = emailForm.querySelector('button[type="submit"]');
           const originalText = submitBtn.textContent;
           submitBtn.textContent = 'Subscribing...';
@@ -221,23 +230,17 @@
         });
       }
 
-      // Setup reveal animations
       setupRevealAnimations();
-      
-      // Check for news posts and hide "no news" message if posts exist
       checkForNewsPosts();
     });
 
-    // Function to setup scroll reveal animations
     function setupRevealAnimations() {
       const reveals = document.querySelectorAll('.reveal');
-      
+
       if (reveals.length > 0) {
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('show');
-            }
+            if (entry.isIntersecting) entry.target.classList.add('show');
           });
         }, {
           threshold: 0.1,
@@ -248,22 +251,14 @@
       }
     }
 
-    // Function to check for news posts and hide "no news" message
+    // Correct: count actual news cards on the page
     function checkForNewsPosts() {
-      const newsCards = document.querySelectorAll('.news-card');
-      const noNewsMessage = document.getElementById('no-news-message');
       const newsGrid = document.getElementById('news-grid');
-      
-      // Count actual visible news cards (not commented ones)
-      const visibleNewsCards = Array.from(newsGrid.children).filter(card => 
-        !card.classList.contains('news-card') && card.tagName !== 'SCRIPT'
-      ).length;
-      
-      if (visibleNewsCards > 0 && noNewsMessage) {
-        noNewsMessage.style.display = 'none';
-      } else if (noNewsMessage) {
-        noNewsMessage.style.display = 'block';
-      }
+      const noNewsMessage = document.getElementById('no-news-message');
+      if (!newsGrid || !noNewsMessage) return;
+
+      const visibleNewsCards = newsGrid.querySelectorAll('.news-card').length;
+      noNewsMessage.style.display = visibleNewsCards > 0 ? 'none' : 'block';
     }
   </script>
 </body>
