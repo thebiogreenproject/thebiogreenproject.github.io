@@ -23,7 +23,6 @@
             <a href="projects/plastic-reduction.html">Plastic Reduction</a>
           </div>
         </div>
-        <a href="news.html">News</a>
         <a href="community.html">Community</a>
         <a href="partners.html">Global Partners</a>
         <a href="team.html">Team</a>
@@ -134,71 +133,67 @@
   </footer>
 
   <script>
-    // Enhanced menu functionality with dropdown support
-    document.addEventListener('DOMContentLoaded', function() {
-      const toggle = document.querySelector('.menu-toggle');
-      const menu = document.querySelector('.menu');
-      const dropdowns = document.querySelectorAll('.dropdown');
-      
-      // Mobile menu toggle
-      if (toggle && menu) {
-        toggle.addEventListener('click', () => {
-          menu.classList.toggle('open');
-          toggle.textContent = menu.classList.contains('open') ? '✕' : '☰';
-          toggle.setAttribute('aria-expanded', menu.classList.contains('open'));
+  // Enhanced menu functionality with dropdown support
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    // Mobile menu toggle
+    if (menuToggle && menu) {
+      menuToggle.addEventListener('click', () => {
+        menu.classList.toggle('open');
+        menuToggle.textContent = menu.classList.contains('open') ? '✕' : '☰';
+        menuToggle.setAttribute('aria-expanded', menu.classList.contains('open'));
+      });
+    }
+
+    // Dropdown functionality
+    dropdowns.forEach((dropdown) => {
+      const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
+
+      // Desktop: hover to open
+      dropdown.addEventListener('mouseenter', () => {
+        if (window.innerWidth > 860) dropdown.classList.add('open');
+      });
+
+      dropdown.addEventListener('mouseleave', () => {
+        if (window.innerWidth > 860) dropdown.classList.remove('open');
+      });
+
+      // Mobile: click to toggle
+      if (dropdownToggle) {
+        dropdownToggle.addEventListener('click', (e) => {
+          if (window.innerWidth <= 860) {
+            e.preventDefault();
+            dropdown.classList.toggle('open');
+          }
         });
       }
-      
-      // Dropdown functionality
-      dropdowns.forEach(dropdown => {
-        const toggle = dropdown.querySelector('.dropdown-toggle');
-        
-        // Desktop: hover to open
-        dropdown.addEventListener('mouseenter', () => {
-          if (window.innerWidth > 860) {
-            dropdown.classList.add('open');
-          }
-        });
-        
-        dropdown.addEventListener('mouseleave', () => {
-          if (window.innerWidth > 860) {
-            dropdown.classList.remove('open');
-          }
-        });
-        
-        // Mobile: click to toggle
-        if (toggle) {
-          toggle.addEventListener('click', (e) => {
-            if (window.innerWidth <= 860) {
-              e.preventDefault();
-              dropdown.classList.toggle('open');
-            }
-          });
-        }
-      });
-      
-      // Handle email form submission
-      const emailForm = document.getElementById('email-form');
-      const formMessage = document.getElementById('form-message');
-      
-      if (emailForm) {
-        emailForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          
-          const formData = new FormData(emailForm);
-          
-          // Show loading state
-          const submitBtn = emailForm.querySelector('button[type="submit"]');
-          const originalText = submitBtn.textContent;
-          submitBtn.textContent = 'Subscribing...';
-          submitBtn.disabled = true;
-          
-          fetch(emailForm.action, {
-            method: 'POST',
-            body: formData
-          })
-          .then(response => response.json())
-          .then(data => {
+    });
+
+    // Handle email form submission
+    const emailForm = document.getElementById('email-form');
+    const formMessage = document.getElementById('form-message');
+
+    if (emailForm) {
+      emailForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(emailForm);
+
+        // Show loading state
+        const submitBtn = emailForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Subscribing...';
+        submitBtn.disabled = true;
+
+        fetch(emailForm.action, {
+          method: 'POST',
+          body: formData,
+        })
+          .then((response) => response.json())
+          .then((data) => {
             if (data.result === 'success') {
               formMessage.textContent = 'Thank you for subscribing!';
               formMessage.style.backgroundColor = '#e9f8ee';
@@ -206,11 +201,12 @@
               formMessage.style.display = 'block';
               emailForm.reset();
             } else {
-              throw new Error(data.error);
+              throw new Error(data.error || 'Unknown error');
             }
           })
-          .catch(error => {
-            formMessage.textContent = 'Sorry, there was an error. Please try again or email us directly.';
+          .catch((error) => {
+            formMessage.textContent =
+              'Sorry, there was an error. Please try again or email us directly.';
             formMessage.style.backgroundColor = '#fef2f2';
             formMessage.style.color = '#dc2626';
             formMessage.style.display = 'block';
@@ -220,15 +216,9 @@
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
           });
-        });
-      }
-    });
-          // If no news, the default "no news" message remains
-        })
-        .catch(error => {
-          console.error('Error loading news:', error);
-        });
+      });
     }
-  </script>
+  });
+</script>
 </body>
 </html>
