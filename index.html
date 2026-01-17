@@ -10,7 +10,7 @@
   <header class="header">
     <nav class="nav">
       <div class="brand">
-        <a href="../index.html"><img src="../images/logo.jpg" alt="BioGreen logo" /></a>
+        <a href="index.html"><img src="images/logo.jpg" alt="BioGreen logo" /></a>
       </div>
       <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-menu">☰</button>
       <div class="menu" id="main-menu">
@@ -22,8 +22,6 @@
             <a href="projects/plastic-reduction.html">Plastic Reduction</a>
           </div>
         </div>
-        <!-- Optional: if you want a nav item that jumps to the updates section -->
-        <!-- <a href="#news">Updates</a> -->
         <a href="community.html">Community</a>
         <a href="partners.html">Global Partners</a>
         <a href="team.html">Team</a>
@@ -50,17 +48,34 @@
     </section>
 
     <section class="section" id="mission">
-      <h2>Our Mission</h2>
-      <p>Our mission is to connect research, agriculture, and innovation to create sustainable cycles of growth.</p>
+      <h2>Vision</h2>
+      <ul class="impact-list">
+        <li>A university environment in which students can apply theoretical knowledge to the practical experience of leading real-world sustainable projects.</li>
+        <li>Extend education beyond the confines of the classroom through peer-led experimentation in the field.</li>
+        <li>Enable students to build self-confidence, develop critical thinking skills, and develop a sense of social responsibility.</li>
+        <li>Develop graduates who are technically capable, socially aware, flexible, and able to take on leadership roles in addressing sustainability issues within a variety of contexts through experiential education and student ownership.</li>
+      </ul>
 
-      <h2>Our Vision</h2>
-      <p>Our vision is a student-powered, science-driven circular economy where local waste becomes local value — healthier soils, resilient crops, and communities learning by doing.</p>
+      <h2>Mission</h2>
+      <ul class="impact-list">
+        <li>Provide students with hands-on opportunities to design, lead, and evaluate sustainability projects.</li>
+        <li>Embed experiential learning into real campus-based environmental challenges.</li>
+        <li>Develop transferable skills, including leadership, project management, teamwork, and problem-solving.</li>
+        <li>Connect academic knowledge with practical application through peer-led and interdisciplinary models.</li>
+        <li>Support student initiatives that contribute to circular economy thinking and the Sustainable Development Goals.</li>
+      </ul>
 
-      <h2>Our Values</h2>
-      <ul>
-        <li>Innovation through collaboration</li>
-        <li>Science with community impact</li>
-        <li>Transparency, inclusion, and education</li>
+      <p class="lead">
+        BioGreen exists to bridge education and action—empowering students to apply what they learn, collaborate across disciplines, and create measurable environmental and social impact while building skills for their future careers.
+      </p>
+
+      <h2>Values</h2>
+      <ul class="impact-list">
+        <li><strong>Student-led learning:</strong> We place students at the centre of decision-making, leadership, and experimentation, recognising ownership as key to deep learning.</li>
+        <li><strong>Collaboration and peer learning:</strong> We believe interdisciplinary teamwork and peer-to-peer knowledge sharing strengthen both project outcomes and student development.</li>
+        <li><strong>Experiential education:</strong> Learning through action—where real challenges, ambiguity, and iteration build confidence, resilience, and critical thinking.</li>
+        <li><strong>Circular and responsible thinking:</strong> Encourage students to rethink waste, resources, and systems through circular economy principles and responsible consumption.</li>
+        <li><strong>Community and belonging:</strong> Foster inclusive project environments that build connection, shared purpose, and a strong sense of campus community.</li>
       </ul>
     </section>
 
@@ -75,7 +90,6 @@
       -->
 
       <div class="card-grid" id="news-grid">
-
         <!-- Example post 1 (Uncomment and edit) -->
         <!--
         <a class="card news-card"
@@ -88,20 +102,6 @@
           <small>Posted on: March 15, 2025</small>
         </a>
         -->
-
-        <!-- Example post 2 (Uncomment and edit) -->
-        <!--
-        <a class="card news-card"
-           href="posts/new-team-members.pdf"
-           target="_blank"
-           rel="noopener">
-          <img src="images/blog_placeholder_02.jpg" alt="Team meeting" />
-          <h3>New Team Members Join BioGreen</h3>
-          <p class="lead">Welcome our new team members and learn about their roles.</p>
-          <small>Posted on: February 28, 2025</small>
-        </a>
-        -->
-
       </div>
 
       <div id="no-news-message" class="no-news">
@@ -250,7 +250,6 @@
       }
     }
 
-    // Correct: count actual news cards on the page
     function checkForNewsPosts() {
       const newsGrid = document.getElementById('news-grid');
       const noNewsMessage = document.getElementById('no-news-message');
@@ -262,3 +261,4 @@
   </script>
 </body>
 </html>
+
