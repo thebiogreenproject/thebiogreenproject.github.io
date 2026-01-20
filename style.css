@@ -336,6 +336,11 @@ a:hover {
   justify-content: center;
   gap: 24px;
 }
+/* Partners: clickable cards should not look like links */
+.partners-grid .card {
+  text-decoration: none;
+  color: inherit;
+}
 .card {
   background: var(--panel);
   border: 1px solid rgba(0,0,0,0.1);
