@@ -333,6 +333,13 @@ a:hover {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 24px;
 }
+/* Partners: prevent single card stretching full width */
+.partners-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 860px);
+  justify-content: center;
+  gap: 24px;
+}
 .card {
   background: var(--panel);
   border: 1px solid rgba(0,0,0,0.1);
