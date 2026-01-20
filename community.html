@@ -59,17 +59,6 @@
       </table>
       <p class="lead">This table will be updated as new events are scheduled.</p>
     </section>
-
-    <section class="section reveal">
-      <h2>Partnerships</h2>
-      <!-- BEGINNER NOTE: Copy any <img> line below to add a logo. Keep alt text clear. -->
-      <div class="logo-row">
-        <img src="images/logo_neonraptor.jpg" alt="Neon Raptor Brewing Co.">
-        <img src="images/logo_uon.jpg" alt="University of Nottingham">
-        <!-- <img src="images/logo_new_partner.png" alt="Partner Name"> -->
-      </div>
-      <p class="lead">Interested in partnering? <a href="contact.html">Get in touch</a>.</p>
-    </section>
   </main>
 
   <footer class="footer">
@@ -91,7 +80,7 @@
       const toggle = document.querySelector('.menu-toggle');
       const menu = document.querySelector('.menu');
       const dropdowns = document.querySelectorAll('.dropdown');
-      
+
       // Mobile menu toggle
       if (toggle && menu) {
         toggle.addEventListener('click', () => {
@@ -100,24 +89,20 @@
           toggle.setAttribute('aria-expanded', menu.classList.contains('open'));
         });
       }
-      
+
       // Dropdown functionality
       dropdowns.forEach(dropdown => {
         const toggle = dropdown.querySelector('.dropdown-toggle');
-        
+
         // Desktop: hover to open
         dropdown.addEventListener('mouseenter', () => {
-          if (window.innerWidth > 860) {
-            dropdown.classList.add('open');
-          }
+          if (window.innerWidth > 860) dropdown.classList.add('open');
         });
-        
+
         dropdown.addEventListener('mouseleave', () => {
-          if (window.innerWidth > 860) {
-            dropdown.classList.remove('open');
-          }
+          if (window.innerWidth > 860) dropdown.classList.remove('open');
         });
-        
+
         // Mobile: click to toggle
         if (toggle) {
           toggle.addEventListener('click', (e) => {
@@ -128,7 +113,7 @@
           });
         }
       });
-      
+
       const io = new IntersectionObserver(es => {
         es.forEach(e => e.isIntersecting && e.target.classList.add('show'));
       }, {threshold: .12});
