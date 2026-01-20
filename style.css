@@ -61,14 +61,6 @@ a:hover {
   margin: 0 auto;
   width: 100%;
 }
-.brand img {
-  height: 56px;
-  width: auto;
-  border-radius: 0;
-  border: none;
-  display: block;
-  object-fit: contain;
-}
 .menu {
   display: flex;
   flex-wrap: wrap;
@@ -95,22 +87,26 @@ a:hover {
   background: rgba(241,245,242,0.7);
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 0;
-}
-
 .brand a {
   display: flex;
   align-items: center;
-  padding: 2px 4px;
-  border-radius: 10px;
-}
-.brand a:hover {
-  background: rgba(241,245,242,0.7);
+  padding: 6px 10px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.12);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
+.brand a:hover {
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.brand img {
+  height: 44px;
+  width: auto;
+  display: block;
+}
 
 /* Dropdown Menu */
 .dropdown {
