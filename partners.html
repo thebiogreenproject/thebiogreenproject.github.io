@@ -39,13 +39,19 @@
   <main class="container">
     <section class="section reveal">
       <h2>Partners</h2>
-      <!-- BEGINNER NOTE: Duplicate a partner-card block to add more partners -->
+
       <div class="partners-grid">
-        <div class="card">
-          <img src="images/UONM.jpeg" alt="Partner Name">
+        <a class="card"
+           href="https://www.nottingham.edu.my/index.aspx"
+           target="_blank"
+           rel="noopener">
+          <img src="images/UONM.jpeg" alt="University of Nottingham Malaysia">
           <h3>University of Nottingham Malaysia</h3>
-          <p class="lead">We are uniting with our Malaysia campus to transform BioGreen into a cross-border initiative, fostering shared student leadership and international sustainability research.</p>
-        </div>
+          <p class="lead">
+            We are uniting with our Malaysia campus to transform BioGreen into a cross-border initiative,
+            fostering shared student leadership and international sustainability research.
+          </p>
+        </a>
       </div>
     </section>
   </main>
@@ -58,7 +64,10 @@
       </div>
       <div>
         <p>Contact us: <a href="mailto:uonbiogreenproject@gmail.com">uonbiogreenproject@gmail.com</a></p>
-        <p><a href="https://www.instagram.com/thebiogreenproject_uon" target="_blank">Instagram</a> • <a href="https://github.com/thebiogreenproject" target="_blank">GitHub</a></p>
+        <p>
+          <a href="https://www.instagram.com/thebiogreenproject_uon" target="_blank" rel="noopener">Instagram</a> •
+          <a href="https://github.com/thebiogreenproject" target="_blank" rel="noopener">GitHub</a>
+        </p>
         <small>© 2025 The BioGreen</small>
       </div>
     </div>
@@ -69,8 +78,7 @@
       const toggle = document.querySelector('.menu-toggle');
       const menu = document.querySelector('.menu');
       const dropdowns = document.querySelectorAll('.dropdown');
-      
-      // Mobile menu toggle
+
       if (toggle && menu) {
         toggle.addEventListener('click', () => {
           menu.classList.toggle('open');
@@ -78,27 +86,20 @@
           toggle.setAttribute('aria-expanded', menu.classList.contains('open'));
         });
       }
-      
-      // Dropdown functionality
+
       dropdowns.forEach(dropdown => {
-        const toggle = dropdown.querySelector('.dropdown-toggle');
-        
-        // Desktop: hover to open
+        const t = dropdown.querySelector('.dropdown-toggle');
+
         dropdown.addEventListener('mouseenter', () => {
-          if (window.innerWidth > 860) {
-            dropdown.classList.add('open');
-          }
+          if (window.innerWidth > 860) dropdown.classList.add('open');
         });
-        
+
         dropdown.addEventListener('mouseleave', () => {
-          if (window.innerWidth > 860) {
-            dropdown.classList.remove('open');
-          }
+          if (window.innerWidth > 860) dropdown.classList.remove('open');
         });
-        
-        // Mobile: click to toggle
-        if (toggle) {
-          toggle.addEventListener('click', (e) => {
+
+        if (t) {
+          t.addEventListener('click', (e) => {
             if (window.innerWidth <= 860) {
               e.preventDefault();
               dropdown.classList.toggle('open');
@@ -106,10 +107,11 @@
           });
         }
       });
-      
+
       const io = new IntersectionObserver(es => {
         es.forEach(e => e.isIntersecting && e.target.classList.add('show'));
-      }, {threshold: .12});
+      }, { threshold: .12 });
+
       document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     });
   </script>
