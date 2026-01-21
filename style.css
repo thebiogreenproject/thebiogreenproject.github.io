@@ -329,21 +329,16 @@ a:hover {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 24px;
 }
-/* Partners: prevent single card stretching full width */
-.partners-grid {
-  display: grid;
-  grid-template-columns: minmax(280px, 860px);
-  justify-content: center;
-  gap: 24px;
-}
-/* Partners: clickable cards should not look like links */
-.partners-grid .card {
+/* Clickable cards should not look like links */
+.partners-grid a.card,
+a.news-card {
   text-decoration: none;
   color: inherit;
 }
-.news-card{
-  text-decoration:none;
-  color:inherit;
+
+.partners-grid a.card:hover,
+a.news-card:hover {
+  opacity: 1; /* override global a:hover dim */
 }
 .card {
   background: var(--panel);
@@ -750,8 +745,6 @@ details.cohort .cohort-body {
   text-align: center;
 }
 /* Utility classes */
-.text-center { text-align: center; }
-
 .btn-center{
   display:flex;
   justify-content:center;
