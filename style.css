@@ -341,6 +341,10 @@ a:hover {
   text-decoration: none;
   color: inherit;
 }
+.news-card{
+  text-decoration:none;
+  color:inherit;
+}
 .card {
   background: var(--panel);
   border: 1px solid rgba(0,0,0,0.1);
@@ -745,5 +749,14 @@ details.cohort .cohort-body {
 .text-center {
   text-align: center;
 }
+/* Utility classes */
+.text-center { text-align: center; }
+
+.btn-center{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
 .mt-0 { margin-top: 0; }
 .mb-0 { margin-bottom: 0; }
