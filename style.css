@@ -332,6 +332,25 @@ a:hover {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 24px;
 }
+
+.card.media {
+  padding: 0;
+  overflow: hidden;              /* clip image to radius */
+}
+
+.card.media .content {
+  padding: 16px 20px;
+}
+
+.card.media img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  border-radius: 0;
+}
+
 /* Clickable cards should not look like links */
 .partners-grid a.card,
 a.news-card {
@@ -357,33 +376,14 @@ a.news-card:hover {
   background: var(--panel);
   border: 1px solid rgba(0,0,0,0.1);
   border-radius: 16px;
+  padding: 20px;                 /* default text card padding */
   transition: transform .2s ease, box-shadow .2s ease;
-  overflow: hidden; /* keep */
-  padding: 0;       /* IMPORTANT: remove padding so image is flush */
 }
+
 
 .card:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 24px rgba(0,0,0,.08);
-}
-
-.card .content {
-  padding: 16px 20px;
-}
-
-/* Image should fill the top edge-to-edge (no inner rounding) */
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  display: block;
-  border-radius: 0;  /* IMPORTANT */
-  margin: 0;         /* IMPORTANT */
-}
-
-/* Partners image height override */
-.partners-grid .card img {
-  height: 130px; /* choose 140–180; 160 is a good default */
 }
 
 .card h3 {
