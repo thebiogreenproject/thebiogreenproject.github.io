@@ -363,10 +363,8 @@ a.news-card:hover {
 }
 
 .card .content {
-  padding: 20px;
+  padding: 16px 20px;
 }
-
-
 
 /* Image should fill the top edge-to-edge (no inner rounding) */
 .card img {
@@ -380,14 +378,17 @@ a.news-card:hover {
 
 /* Partners image height override */
 .partners-grid .card img {
-  height: 160px; /* choose 140–180; 160 is a good default */
+  height: 130px; /* choose 140–180; 160 is a good default */
 }
 
 .card h3 {
   margin: 0 0 6px;
   font-size: 1.25rem;
 }
-
+.card p.lead {
+  margin: 6px 0 0;
+  line-height: 1.55;
+}
 
 /* Team Cards (FIXED: No longer conflicts with .card) */
 .team-card {
