@@ -340,18 +340,13 @@ a.news-card {
 a.news-card:hover {
   opacity: 1; /* override global a:hover dim */
 }
-.card {
-  background: var(--panel);
-  border: 1px solid rgba(0,0,0,0.1);
-  border-radius: 16px;
-  padding: 20px;
-  transition: transform .2s ease, box-shadow .2s ease;
-  overflow: hidden;
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
 }
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(0,0,0,.08);
-}
+
 /* Card media should be flush + clipped by the card */
 .card {
   background: var(--panel);
@@ -362,10 +357,16 @@ a.news-card:hover {
   padding: 0;       /* IMPORTANT: remove padding so image is flush */
 }
 
-/* Put padding on content, not the whole card */
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+}
+
 .card .content {
   padding: 20px;
 }
+
+
 
 /* Image should fill the top edge-to-edge (no inner rounding) */
 .card img {
@@ -383,9 +384,10 @@ a.news-card:hover {
 }
 
 .card h3 {
-  margin: 8px 0 6px;
+  margin: 0 0 6px;
   font-size: 1.25rem;
 }
+
 
 /* Team Cards (FIXED: No longer conflicts with .card) */
 .team-card {
